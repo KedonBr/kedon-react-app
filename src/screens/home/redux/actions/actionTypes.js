@@ -1,0 +1,1 @@
+export const IS_HOME = 'SHOW_IS_HOME'
