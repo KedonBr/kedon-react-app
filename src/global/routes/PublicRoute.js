@@ -37,7 +37,29 @@ class PublicRoute extends React.Component {
                 }}
             />
         ) : isAuthenticated() ? 
-            <Redirect to={{ pathname: '/home' }} />
+            <Route
+            render={props => {
+            return (
+                <ContextLayout.Consumer>
+                {context => {
+                    let LayoutTag =
+                    layout === 'full'
+                        ? context.fullLayout
+                        : layout === "horizontal"
+                        ? context.horizontalLayout
+                        : context.VerticalLayout
+                    return (
+                    <LayoutTag {...props} permission={props.user}>
+                        <Suspense fallback={<Spinner />}>
+                            <Component {...props} />
+                        </Suspense>
+                    </LayoutTag>
+                    )
+                }}
+                </ContextLayout.Consumer>
+            )
+            }}
+        />
         :(
             <Redirect to={{ pathname: '/login' }} />
         );

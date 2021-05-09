@@ -15,7 +15,7 @@ import { useParams } from "react-router";
 const home = lazy(() => import("./screens/home/home"))
 const doctors = lazy(() => import("./screens/doctors/doctors"))
 const profile = lazy(() => import("./screens/profile/profile"))
-const Unauthorized = lazy(() => import("./screens/defaultPages/401"))
+const unauthorized = lazy(() => import("./screens/defaultPages/401"))
 const notFound = lazy(() => import("./screens/defaultPages/404"))
 const login = lazy(() => import("./screens/login/login"))
 
@@ -64,6 +64,7 @@ class AppRouter extends React.Component {
         <Switch>
           <ProtectedRoute exact={true} path="/home" component={home} layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />
           <PublicRoute exact={true} path="/login" component={login} layout={"full"} />
+          <PublicRoute exact={true} path="/unauthorized" component={unauthorized} layout={"full"} />
           <PublicRoute exact={true} path="/" component={login} layout={"full"} />
           <ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"horizontal"} permission={["administrator", "doctors"]} />
           {/*<ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />*/}
