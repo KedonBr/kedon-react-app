@@ -1,0 +1,105 @@
+@import "./assets/scss/app.scss";
+
+
+
+/* simple - enter transition 300ms, exit 150ms */
+.fade-appear,
+.fade-enter {
+    opacity: 0;
+    z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear 150ms;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 150ms linear;
+}
+
+/* Page */
+
+.page {
+  height: 100vh;
+  padding: calc(15% + 1.5em) 5% 5%;
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+}
+
+.page-enter {
+  transform: translate(-100%, 0);
+}
+
+.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page-exit {
+  box-shadow: 0 0 5em 0 rgba(0, 0, 0, .5) inset;
+  transform: translate(-100%, 0);
+}
+
+.page--prev.page-enter {
+  transform: translate(100%, 0);
+}
+
+.page--prev.page-enter-active {
+  transform: translate(0, 0);
+}
+
+.page--prev.page-exit {
+  transform: translate(100%, 0);
+}
+
+.page-exit .page__inner {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.sc-fznWqX{
+  //flex: 2 ;
+  max-height: calc(100vh - 13rem);
+  flex-direction: column;
+  overflow: auto;
+  display: flex !important;
+  flex: 1 1 auto;
+  .rdt_TableRow {
+  .row-options{
+  .actions{
+  visibility: hidden;
+  }
+  }
+  &:hover{
+  .row-options{
+  .actions{
+  visibility: visible;
+  }
+  }
+  }
+  }
+  .mb-m {
+  margin-bottom: .25rem;
+  }
+  
+  
+ }
+ .sc-fzoXzr{
+  flex: 0 1 auto !important;
+ }
+ .rdt_Pagination{
+  background: #EDEDED;
+ }
+ .sc-fzoNJl{
+  flex: 0 1 auto !important;
+ }
