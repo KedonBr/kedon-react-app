@@ -1,0 +1,11 @@
+// export const TOAST_ERROR_TIME = 6000;
+// export const TOAST_SUCCESS_TIME = 2000;
+// // export const domain = 'http://ec2-204-236-250-38.compute-1.amazonaws.com:3002';
+export const domain = 'http://157.245.235.171';
+export const apiUrl = `api/v1`;
+export const LOGGEDUSER = 'user'
+export const LOGGED_CUSTOMER = 'user'
+export const TOKEN_CUSTOMER = 'token'
+export const TOKEN = 'token'
+export const REFRESHTOKEN_CUSTOMER = 'refresh-token'
+export const COMPANY = 'company'
