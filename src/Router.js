@@ -32,8 +32,8 @@ const RouteConfig = ({ component: Component, layout, ...rest }) => (
               layout === 'full'
                 ? context.fullLayout
                 : layout === "horizontal"
-                ? context.horizontalLayout
-                : context.VerticalLayout
+                  ? context.horizontalLayout
+                  : context.VerticalLayout
             return (
               <LayoutTag {...props} permission={props.user}>
                 <Suspense fallback={<Spinner />}>
@@ -62,13 +62,13 @@ class AppRouter extends React.Component {
       // Set the directory path if you are deploying in sub-folder
       <Router history={history}>
         <Switch>
-          <ProtectedRoute exact={true} path="/home" component={home} layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />
+          <ProtectedRoute exact={true} path="/home" component={home} layout={"full"} permission={["administrator", "pacients", "doctors", "partners"]} />
           <PublicRoute exact={true} path="/login" component={login} layout={"full"} />
           <PublicRoute exact={true} path="/unauthorized" component={unauthorized} layout={"full"} />
           <PublicRoute exact={true} path="/" component={login} layout={"full"} />
-          <ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/doctors" component={doctors} layout={"horizontal"} permission={["administrator", "doctors"]} />
           {/*<ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />*/}
-          <ProtectedRoute exact path="/profile" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]}/>
+          <ProtectedRoute exact path="/profile" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
           {/*<ProtectedRoute path="/example" component={example} layout={"horizontal"} permission={["administrator","supervisor", "agent"]} />*/}
           <AppRoute component={notFound} layout={"full"} />
         </Switch>

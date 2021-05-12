@@ -13,15 +13,10 @@ import "./index.scss"
 const LazyApp = lazy(() => import("./App"))
 
 ReactDOM.render(
-  /*<Provider store={Store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>*/
   <Provider store={Store}>
     <Suspense fallback={<Spinner />}>
       <Layout>
-          <LazyApp />
+        <LazyApp />
       </Layout>
     </Suspense>
   </Provider>,

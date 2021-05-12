@@ -1,6 +1,81 @@
 import React from "react"
 import * as Icon from "react-feather"
+import { Home, Profile, Medkit, Megaphone, Papers, Messages, Notification } from '../shared/images';
+
 const navigationConfig = [
+  {
+    id: "home",
+    title: "Home",
+    type: "item",
+    icon: <Home />,
+    //permissions: ["admin", "editor"],
+    navLink: "/",
+  },
+  {
+    id: "meuPerfil",
+    title: "Meu perfil",
+    type: "item",
+    icon: <Profile/>,
+    //permissions: ["admin", "editor"],
+    navLink: "/",
+  },
+  {
+    id: "consultas",
+    title: "Consultas",
+    type: "item",
+    icon: <Medkit/>,
+    //permissions: ["admin", "editor"],
+    navLink: "/",
+  },
+  {
+    id: "classificados",
+    title: "Classificados",
+    type: "item",
+    icon: <Megaphone/>,
+    //permissions: ["admin", "editor"],
+    navLink: "/"
+  },
+  {
+    id: "prontuarios",
+    title: "Prontuários",
+    type: "collapse",
+    icon: <Papers/>,
+    children: [
+      {
+        id: "cocumentos",
+        title: "Documentos",
+        type: "item",
+        //permissions: ["admin", "editor"],
+        navLink: "/"
+      },
+      {
+        id: "acessarProntuarios ",
+        title: "Acessar Prontuários",
+        type: "item",
+        //permissions: ["admin", "editor"],
+        navLink: "/"
+      },
+    ]
+  },
+  {
+    id: "mensagens",
+    title: "Mensagens",
+    type: "item",
+    icon: <Messages/>,
+    //permissions: ["admin", "editor"],
+    navLink: "/"
+  },
+  {
+    id: "notificacoes",
+    title: "Notificações",
+    type: "item",
+    icon: <Notification/>,
+    //permissions: ["admin", "editor"],
+    navLink: "/"
+  },
+]
+
+const defaultConfig = [
   {
     id: "dashboard",
     title: "Dashboard",

@@ -1,42 +1,14 @@
 @import "../variables/theme-variables.scss";
 body {
-    display: block;
-    background-color: rgba($gray-100,.3);
+    background: #f3f3f3;
+}
+.container{
+    box-sizing: border-box;
 }
 .main-app-body {
     display: flex;
     flex-direction: column;
-    .app-container {
-        display: flex;
-        flex-grow: 1;
-        .content-wrapper {
-            position: relative;
-            overflow: auto;
-            background-color: $secondary;
-        }
-    }
-    .app-sidebar {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        width: 300px;
-        max-height: 100%;
-        overflow: auto;
-        background: $primary;
-        color: $white;
-        a {
-            color: $gray-100;
-        }
-    }
-    footer {
-        background-color: $orange    ;
-    }
-    .app-content {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        .content-wrapper {
-            flex-grow: 1;
-        }
-    }
+    align-items: stretch;
+    box-sizing: border-box;
+    overflow: hidden;
 }

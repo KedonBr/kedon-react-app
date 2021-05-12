@@ -1,0 +1,120 @@
+@import "../../../assets/scss/app.scss";
+
+.sidebar-content {
+    width: 300px;
+    background: #fff;
+    .profile {
+        cursor: pointer;
+        position: relative;
+        &:hover {
+            background: #f9f9f9;
+        }
+        &:hover .profile__dropdown {
+            opacity: 1;
+            visibility: visible;
+            left: 100%;
+        }
+        &__image {
+            height: 40px;
+            width: 40px;
+            border-radius: 40px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        &__name {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 12ch;
+        }
+        &__dropdown {
+            position: absolute;
+            background: transparent;
+            left: 90%;
+            top: 0;
+            list-style: none;
+            padding: 0 5px;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 240ms ease;
+            &--item {
+                position: relative;
+                cursor: pointer;
+                background: #fff;
+                margin-bottom: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                &:hover {
+                    background: #f9f9f9;
+                }
+                &:hover .profile__dropdown--title {
+                    color: $primary;
+                }
+                &:hover .profile__dropdown--icon svg {
+                    path {
+                        fill: $primary;
+                    }
+                }
+            }
+        }
+    }
+}
+.menu {
+    &__item {
+        position: relative;
+        cursor: pointer;
+        &:hover {
+            background: #f9f9f9;
+        }
+        &:hover .menu__item--icon svg {
+            path {
+                fill: $primary;
+            }
+        }
+        &:hover .menu__item--title {
+            color: $primary;
+        }
+        &:hover .menu__dropdown {
+            opacity: 1;
+            visibility: visible;
+            left: 100%;
+        }
+        .menu__dropdown {
+            position: absolute;
+            background: transparent;
+            left: 90%;
+            top: 0;
+            list-style: none;
+            padding: 0 5px;
+            margin: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 240ms ease;
+            &--item {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 5px;
+                background: #fff;
+                &:hover {
+                    background: #f9f9f9;
+                }
+                &:hover .menu__dropdown--title {
+                    color: $primary;
+                }
+            }
+            &--title {
+                white-space: nowrap;
+            }
+        }
+
+        &--icon {
+            svg {
+                width: 25px;
+                height: 25px;
+                object-fit: contain;
+            }
+        }
+        &--dropdown {
+            position: absolute;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap');
 html {
     scroll-behavior: smooth;
 }
@@ -137,7 +137,7 @@ table {
     vertical-align: baseline;
     list-style: none;
     border: 0;
-    font-family: "Open Sans", sans-serif !important;
+    font-family: 'Maven Pro', sans-serif!important;
 }
 button:focus {
     outline: none;

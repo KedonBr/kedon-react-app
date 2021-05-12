@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+.fw-100 {
+    font-weight: 100;
+}
+.fw-200 {
+    font-weight: 200;
+}
+.fw-300 {
+    font-weight: 300;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-600 {
+    font-weight: 600;
+}
+.fw-700 {
+    font-weight: 700;
+}
+.fw-800 {
+    font-weight: 800;
+}
+.fw-900 {
+    font-weight: 900;
+}
+.fs-10 {
+    font-size: 10px;
+}
+.fs-12 {
+    font-size: 12px;
+}
+.fs-14 {
+    font-size: 14px;
+}
+.fs-16 {
+    font-size: 16px;
+}
+.fs-18 {
+    font-size: 18px;
+}
+.fs-20 {
+    font-size: 20px;
+}
+.fs-22 {
+    font-size: 22px;
+}
+.fs-24 {
+    font-size: 24px;
+}
+.fs-26 {
+    font-size: 26px;
+}
+.fs-28 {
+    font-size: 28px;
+}
+.fs-30 {
+    font-size: 30px;
+}
+.fs-32 {
+    font-size: 32px;
+}
+.fs-34 {
+    font-size: 34px;
+}
+.fs-36 {
+    font-size: 36px;
+}
+.fs-38 {
+    font-size: 38px;
+}
+.fs-40 {
+    font-size: 40px;
+}
+@media (min-width: 576px) {
+    .text-sm-center {
+        text-align: center;
+    }
+    .text-sm-left {
+        text-align: left;
+    }
+    .text-sm-right {
+        text-align: right;
+    }
+    .fw-sm-100 {
+        font-weight: 100;
+    }
+    .fw-sm-200 {
+        font-weight: 200;
+    }
+    .fw-sm-300 {
+        font-weight: 300;
+    }
+    .fw-sm-400 {
+        font-weight: 400;
+    }
+    .fw-sm-500 {
+        font-weight: 500;
+    }
+    .fw-sm-600 {
+        font-weight: 600;
+    }
+    .fw-sm-700 {
+        font-weight: 700;
+    }
+    .fw-sm-800 {
+        font-weight: 800;
+    }
+    .fw-sm-900 {
+        font-weight: 900;
+    }
+    .fs-sm-10 {
+        font-size: 10px;
+    }
+    .fs-sm-12 {
+        font-size: 12px;
+    }
+    .fs-sm-14 {
+        font-size: 14px;
+    }
+    .fs-sm-16 {
+        font-size: 16px;
+    }
+    .fs-sm-18 {
+        font-size: 18px;
+    }
+    .fs-sm-20 {
+        font-size: 20px;
+    }
+    .fs-sm-22 {
+        font-size: 22px;
+    }
+    .fs-sm-24 {
+        font-size: 24px;
+    }
+    .fs-sm-26 {
+        font-size: 26px;
+    }
+    .fs-sm-28 {
+        font-size: 28px;
+    }
+    .fs-sm-30 {
+        font-size: 30px;
+    }
+    .fs-sm-32 {
+        font-size: 32px;
+    }
+    .fs-sm-34 {
+        font-size: 34px;
+    }
+    .fs-sm-36 {
+        font-size: 36px;
+    }
+    .fs-sm-38 {
+        font-size: 38px;
+    }
+    .fs-sm-40 {
+        font-size: 40px;
+    }
+}
+@media (min-width: 768px) {
+    .text-md-center {
+        text-align: center;
+    }
+    .text-md-left {
+        text-align: left;
+    }
+    .text-md-right {
+        text-align: right;
+    }
+    .fw-md-100 {
+        font-weight: 100;
+    }
+    .fw-md-200 {
+        font-weight: 200;
+    }
+    .fw-md-300 {
+        font-weight: 300;
+    }
+    .fw-md-400 {
+        font-weight: 400;
+    }
+    .fw-md-500 {
+        font-weight: 500;
+    }
+    .fw-md-600 {
+        font-weight: 600;
+    }
+    .fw-md-700 {
+        font-weight: 700;
+    }
+    .fw-md-800 {
+        font-weight: 800;
+    }
+    .fw-md-900 {
+        font-weight: 900;
+    }
+    .fs-md-10 {
+        font-size: 10px;
+    }
+    .fs-md-12 {
+        font-size: 12px;
+    }
+    .fs-md-14 {
+        font-size: 14px;
+    }
+    .fs-md-16 {
+        font-size: 16px;
+    }
+    .fs-md-18 {
+        font-size: 18px;
+    }
+    .fs-md-20 {
+        font-size: 20px;
+    }
+    .fs-md-22 {
+        font-size: 22px;
+    }
+    .fs-md-24 {
+        font-size: 24px;
+    }
+    .fs-md-26 {
+        font-size: 26px;
+    }
+    .fs-md-28 {
+        font-size: 28px;
+    }
+    .fs-md-30 {
+        font-size: 30px;
+    }
+    .fs-md-32 {
+        font-size: 32px;
+    }
+    .fs-md-34 {
+        font-size: 34px;
+    }
+    .fs-md-36 {
+        font-size: 36px;
+    }
+    .fs-md-38 {
+        font-size: 38px;
+    }
+    .fs-md-40 {
+        font-size: 40px;
+    }
+}
+@media (min-width: 992px) {
+    .text-lg-center {
+        text-align: center;
+    }
+    .text-lg-left {
+        text-align: left;
+    }
+    .text-lg-right {
+        text-align: right;
+    }
+    .fw-lg-100 {
+        font-weight: 100;
+    }
+    .fw-lg-200 {
+        font-weight: 200;
+    }
+    .fw-lg-300 {
+        font-weight: 300;
+    }
+    .fw-lg-400 {
+        font-weight: 400;
+    }
+    .fw-lg-500 {
+        font-weight: 500;
+    }
+    .fw-lg-600 {
+        font-weight: 600;
+    }
+    .fw-lg-700 {
+        font-weight: 700;
+    }
+    .fw-lg-800 {
+        font-weight: 800;
+    }
+    .fw-lg-900 {
+        font-weight: 900;
+    }
+    .fs-lg-10 {
+        font-size: 10px;
+    }
+    .fs-lg-12 {
+        font-size: 12px;
+    }
+    .fs-lg-14 {
+        font-size: 14px;
+    }
+    .fs-lg-16 {
+        font-size: 16px;
+    }
+    .fs-lg-18 {
+        font-size: 18px;
+    }
+    .fs-lg-20 {
+        font-size: 20px;
+    }
+    .fs-lg-22 {
+        font-size: 22px;
+    }
+    .fs-lg-24 {
+        font-size: 24px;
+    }
+    .fs-lg-26 {
+        font-size: 26px;
+    }
+    .fs-lg-28 {
+        font-size: 28px;
+    }
+    .fs-lg-30 {
+        font-size: 30px;
+    }
+    .fs-lg-32 {
+        font-size: 32px;
+    }
+    .fs-lg-34 {
+        font-size: 34px;
+    }
+    .fs-lg-36 {
+        font-size: 36px;
+    }
+    .fs-lg-38 {
+        font-size: 38px;
+    }
+    .fs-lg-40 {
+        font-size: 40px;
+    }
+}
+@media (min-width: 1200px) {
+    .text-xl-center {
+        text-align: center;
+    }
+    .text-xl-left {
+        text-align: left;
+    }
+    .text-xl-right {
+        text-align: right;
+    }
+    .fw-xl-100 {
+        font-weight: 100;
+    }
+    .fw-xl-200 {
+        font-weight: 200;
+    }
+    .fw-xl-300 {
+        font-weight: 300;
+    }
+    .fw-xl-400 {
+        font-weight: 400;
+    }
+    .fw-xl-500 {
+        font-weight: 500;
+    }
+    .fw-xl-600 {
+        font-weight: 600;
+    }
+    .fw-xl-700 {
+        font-weight: 700;
+    }
+    .fw-xl-800 {
+        font-weight: 800;
+    }
+    .fw-xl-900 {
+        font-weight: 900;
+    }
+    .fs-xl-10 {
+        font-size: 10px;
+    }
+    .fs-xl-12 {
+        font-size: 12px;
+    }
+    .fs-xl-14 {
+        font-size: 14px;
+    }
+    .fs-xl-16 {
+        font-size: 16px;
+    }
+    .fs-xl-18 {
+        font-size: 18px;
+    }
+    .fs-xl-20 {
+        font-size: 20px;
+    }
+    .fs-xl-22 {
+        font-size: 22px;
+    }
+    .fs-xl-24 {
+        font-size: 24px;
+    }
+    .fs-xl-26 {
+        font-size: 26px;
+    }
+    .fs-xl-28 {
+        font-size: 28px;
+    }
+    .fs-xl-30 {
+        font-size: 30px;
+    }
+    .fs-xl-32 {
+        font-size: 32px;
+    }
+    .fs-xl-34 {
+        font-size: 34px;
+    }
+    .fs-xl-36 {
+        font-size: 36px;
+    }
+    .fs-xl-38 {
+        font-size: 38px;
+    }
+    .fs-xl-40 {
+        font-size: 40px;
+    }
+}
+.color-default{
+    color: #5c5c5c;
+}
+.color-black{
+    color: #3f3f3f
+}
+.font-nunito{
+    font-family: 'Nunito', sans-serif;
+}

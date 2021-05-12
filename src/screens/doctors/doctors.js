@@ -2,7 +2,7 @@ import React from 'react';
 
 const Doctors = () => {
     return (
-        <React.Fragment>
+        <div>
             <h1>Hello Doctors</h1>
             <p>Teste</p>
             <p>Teste</p>
@@ -78,62 +78,7 @@ const Doctors = () => {
             <p>Teste</p>
             <p>Teste</p>
             <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-            <p>Teste</p>
-        </React.Fragment>
+        </div>
     )
 }
 

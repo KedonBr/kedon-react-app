@@ -1,0 +1,11 @@
+@import "../../../assets/scss/app.scss";
+footer {
+    background: #f9f9f9;
+    .instagram {
+        &__image {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+        }
+    }
+}

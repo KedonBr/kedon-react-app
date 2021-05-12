@@ -4,7 +4,7 @@ import classnames from "classnames"
 
 const BlankLayout = ({ children, ...rest }) => {
   return (
-              <pre>{children}</pre>
+    <pre>{children}</pre>
   )
 }
 
