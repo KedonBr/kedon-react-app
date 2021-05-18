@@ -9,7 +9,7 @@ const navigationConfig = [
     type: "item",
     icon: <Home />,
     //permissions: ["admin", "editor"],
-    navLink: "/",
+    navLink: "/home",
   },
   {
     id: "meuPerfil",
@@ -17,7 +17,7 @@ const navigationConfig = [
     type: "item",
     icon: <Profile/>,
     //permissions: ["admin", "editor"],
-    navLink: "/",
+    navLink: "/profile",
   },
   {
     id: "consultas",
@@ -42,7 +42,7 @@ const navigationConfig = [
     icon: <Papers/>,
     children: [
       {
-        id: "cocumentos",
+        id: "documentos",
         title: "Documentos",
         type: "item",
         //permissions: ["admin", "editor"],
@@ -53,7 +53,7 @@ const navigationConfig = [
         title: "Acessar Prontuários",
         type: "item",
         //permissions: ["admin", "editor"],
-        navLink: "/"
+        navLink: "#"
       },
     ]
   },
@@ -63,7 +63,7 @@ const navigationConfig = [
     type: "item",
     icon: <Messages/>,
     //permissions: ["admin", "editor"],
-    navLink: "/"
+    navLink: "#"
   },
   {
     id: "notificacoes",
@@ -71,7 +71,7 @@ const navigationConfig = [
     type: "item",
     icon: <Notification/>,
     //permissions: ["admin", "editor"],
-    navLink: "/"
+    navLink: "#"
   },
 ]
 

@@ -63,7 +63,7 @@ class AppRouter extends React.Component {
       // Set the directory path if you are deploying in sub-folder
       <Router history={history}>
         <Switch>
-          <ProtectedRoute exact={true} path="/home" component={home} layout={"full"} permission={["administrator", "pacients", "doctors", "partners"]} />
+          <ProtectedRoute exact={true} path="/home" component={home} layout={"horizontal"} permission={["administrator", "pacients", "doctors", "partners"]} />
           <PublicRoute exact={true} path="/login" component={login} layout={"full"} />
           <PublicRoute exact={true} path="/cadastro" component={register} layout={"full"} />
           <PublicRoute exact={true} path="/unauthorized" component={unauthorized} layout={"full"} />

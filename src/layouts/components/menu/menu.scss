@@ -118,3 +118,91 @@
         }
     }
 }
+.header-mobile{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    box-sizing: border-box;
+    background: #FFF;
+    padding: 0 1rem;
+}
+.menu {
+    position: relative;
+    input[type="checkbox"] {
+        display: none;
+        &:checked ~ .menu__hamburguer span {
+            transform: rotate(45deg);
+            &::after {
+                transform: rotate(90deg);
+                top: 0;
+            }
+            &::before {
+                transform: rotate(-90deg);
+                bottom: 0;
+            }
+        }
+    }
+    &__hamburguer {
+        position: relative;
+        height: 30px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            height: 2px;
+            width: 100%;
+            background: linear-gradient(to right, #071f68, #baf9b3, #2cd1d3);
+            transform: rotate(0deg);
+            transition: 0.5s;
+            &::after {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                top: -15px;
+                background: linear-gradient(to right, #071f68, #baf9b3, #2cd1d3);
+                transition: 0.5s;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                bottom: -15px;
+                background: linear-gradient(to right, #071f68, #baf9b3, #2cd1d3);
+                transition: 0.5s;
+            }
+        }
+    }
+}
+@media(max-width: 768px){
+    .sidebar-content{
+        position: fixed;
+        height: 100vh;
+        transition: left .5s linear;
+    }
+    .sidebarIsClose{
+        left: -300px;
+    }
+    .sidebarIsOpen{
+        left: 0;
+    }
+    .menu__item:hover .menu__dropdown {
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        top: 100%;
+    }
+    .sidebar-content .profile:hover .profile__dropdown {
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        z-index: 1;
+    }
+}

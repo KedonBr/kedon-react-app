@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import './register.scss';
 import { estados } from './utils/estados'
 import { cidades } from './utils/cidades'
-import validaCPF from '../../utils/cpf'
+import validateCPF from '../../utils/cpf'
 const Register = () => {
     const [states, setStates] = useState([])
     const [stateId, setStateId] = useState()
@@ -24,8 +24,13 @@ const Register = () => {
     const cpf = (name) => {
         const cpf = formRef.current.getFieldValue(`${name}`)
         formRef.current.setFieldValue(`${name}`, cpfMask(cpf))
-        formRef.current.setFieldError(`${name}`, '');
-        console.log(validaCPF(cpf))
+        const cpfIsValid = validateCPF(cpf)
+        if (!cpfIsValid.isValid) {
+            console.log(validateCPF().messageInvalid)
+            formRef.current.setFieldError('cpf', cpfIsValid.messageInvalid);
+        } else {
+            formRef.current.setFieldError(`${name}`, '')
+        }
     }
     const date = (name) => {
         const date = formRef.current.getFieldValue(`${name}`)
@@ -34,42 +39,47 @@ const Register = () => {
     }
     function select(e) {
         console.log(e.id)
-        // const selectedState = formRef.current.getFieldValue('state')
-        // const filterState = estados.find(state => (state.label === selectedState))
-        // console.log(typeof filterState)
         setCities(cidades.filter(city => (city.estado == e.id)))
-        // console.log(cidades.filter(city => (city.estado == filterState.id)))
+        formRef.current.setFieldError('state', '');
     }
     const handleSubmit = async (data, { reset }) => {
-        console.log(formRef.current.getFieldValue('state'))
         console.log(data)
-        try {
-            const schema = Yup.object().shape({
-                name: Yup.string().required("Digite seu Nome!"),
-                email: Yup.string().email("Digite um Email Válido!").required("Digite seu E-mail!"),
-                rg: Yup.string().required("Digite seu RG!"),
-                cpf: Yup.string().required("Digite seu CPF!"),
-                data_od_birth: Yup.string().required("Coloque sua data de nascimento!"),
-                state: Yup.string().required("Digite seu estado!"),
-                city: Yup.string().required("Digite sua cidade!"),
-                password: Yup.string().required("Digite sua senha!"),
-                password_confirm: Yup.string().required("Digite sua senha!"),
-            });
-            await schema.validate(data, {
-                abortEarly: false,
-            });
-            console.log(data);
-            formRef.current.setErrors({});
-            reset();
-        } catch (err) {
-            if (err instanceof Yup.ValidationError) {
-                const errorMessages = {};
-                err.inner.forEach((error) => {
-                    errorMessages[error.path] = error.message;
+        const password = formRef.current.getFieldValue('password')
+        const password_confirm = formRef.current.getFieldValue('password_confirm')
+        if (password !== password_confirm) {
+            formRef.current.setFieldError('password_confirm', 'Os dois campos de senha devem ser iguais');
+            console.log('diferentes')
+        } else {
+
+            try {
+                const schema = Yup.object().shape({
+                    name: Yup.string().required("Digite seu Nome!"),
+                    email: Yup.string().email("Digite um Email Válido!").required("Digite seu E-mail!"),
+                    rg: Yup.string().required("Digite seu RG!"),
+                    cpf: Yup.string().required("Digite seu CPF!"),
+                    data_od_birth: Yup.string().required("Coloque sua data de nascimento!"),
+                    state: Yup.string().required("Digite seu estado!"),
+                    city: Yup.string().required("Digite sua cidade!"),
+                    password: Yup.string().min(8, 'No minimo 8 caracteres!').required("Digite sua senha!"),
+                    password_confirm: Yup.string().required("Digite sua senha!"),
                 });
-                formRef.current.setErrors(errorMessages);
+                await schema.validate(data, {
+                    abortEarly: false,
+                });
+                console.log(data);
+                formRef.current.setErrors({});
+                reset();
+            } catch (err) {
+                if (err instanceof Yup.ValidationError) {
+                    const errorMessages = {};
+                    err.inner.forEach((error) => {
+                        errorMessages[error.path] = error.message;
+                    });
+                    formRef.current.setErrors(errorMessages);
+                }
             }
         }
+
     };
     useEffect(() => {
         setStates(estados)
@@ -82,7 +92,7 @@ const Register = () => {
         </span>
                 <Form ref={formRef} onSubmit={handleSubmit}>
                     <Input name="name" placeholder="Nome Completo*" onChange={() => handlerError('name')} />
-                    <Input name="email" placeholder="E-mail*" />
+                    <Input name="email" placeholder="E-mail*" onChange={() => handlerError('email')} />
                     <Input name="rg" placeholder="RG*" onChange={() => rg('rg')} />
                     <Input name="cpf" placeholder="CPF*" onChange={() => cpf('cpf')} />
                     <Input name="data_od_birth" placeholder="Data de Nascimento*" onChange={() => date('data_od_birth')} />

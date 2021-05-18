@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ArrowRight,
   Logo,
@@ -8,11 +8,28 @@ import {
   Logout,
 } from "../../../shared/images";
 import navigationConfig from "../../../configs/navigationConfig";
+import { Link } from 'react-router-dom'
 import './menu.scss'
 const SideBar = () => {
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <React.Fragment>
-      <div className="sidebar-content">
+      {
+        window.innerWidth < 768 ?
+          <div className="header-mobile d-flex justify-content-between align-items-center">
+            <Logo width={120} />
+
+            <label className="menu">
+              <input type="checkbox" onClick={() => setIsOpen(!isOpen)} />
+              <div className="menu__hamburguer">
+                <span></span>
+              </div>
+            </label>
+          </div>
+          :
+          null
+      }
+      <div className={`sidebar-content ${isOpen ? 'sidebarIsOpen' : 'sidebarIsClose'}`}>
         <div className="d-flex justify-content-center">
           <Logo width={200} />
         </div>
@@ -76,20 +93,25 @@ const SideBar = () => {
           <ul className="menu mt-5">
             {navigationConfig.map((item) => (
               <li className="menu__item d-flex align-items-center justify-content-between py-2 px-4">
+                  <Link to={item.navLink}>
+
                 <div className="d-flex align-items-center">
                   <div className="menu__item--icon">{item.icon}</div>
                   <p className="menu__item--title fs-20 fw-300 color-default mx-2">
                     {item.title}
                   </p>
                 </div>
+                </Link>
                 {item.type === "collapse" ? <ArrowRight height={14} /> : null}
                 {item.children ? (
                   <ul className="menu__dropdown">
                     {item.children.map((children) => (
                       <li className="menu__dropdown--item py-2">
-                        <p className="menu__dropdown--title fs-20 fw-300 color-default mx-2">
-                          {children.title}
-                        </p>
+                        <Link to={children.navLink}>
+                          <p className="menu__dropdown--title fs-20 fw-300 color-default mx-2">
+                            {children.title}
+                          </p>
+                        </Link>
                       </li>
                     ))}
                   </ul>
