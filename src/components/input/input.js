@@ -1,18 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useField } from '@unform/core'
-const Input = ({ name, ...rest }) => {
+import './input.scss'
+const Input = ({ name, icon, ...rest }) => {
+
     const inputRef = useRef(null)
-    const {fieldName, registerField, defaultValue, error} = useField(name)
-    
+    const { fieldName, registerField, defaultValue, error } = useField(name)
+
     useEffect(() => {
         registerField({
             name: fieldName,
             ref: inputRef.current,
-            path: 'value'
+            path: 'value',
         })
-    },[fieldName, registerField]);
+    }, [fieldName, registerField]);
     return (
-        <input ref={inputRef} {...rest}/>
+        <div>
+            {error && <span className="d-block fs-14 fw-400 color-red px-2 pb-1">{error}</span>}
+            <label className="input">
+                {icon}
+                <input className="input__text" ref={inputRef} {...rest} />
+            </label>
+        </div>
     )
 }
 

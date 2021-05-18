@@ -6,14 +6,14 @@ const Footer = () => {
     <footer className="container-fluid py-5 p-0">
       <div className="container">
         <div className="row py-3">
-          <div className="col-12 col-md-6 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
             <Logo width={200} />
             <p class="fs-16 fw-400 color-default">
               Aliquam eros lectus, ullamcorper et eros condimentum, finibus
               ullamcorper lorem
             </p>
           </div>
-          <div className="col-12 col-md-6 col-lg-4">
+          <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
             <h5 className="fs-20 fw-600 color-black font-nunito">Instagram</h5>
             <div className="instagram d-flex flex-wrap mt-3">
               <div className="d-flex justify-content-center align-items-center p-2">
@@ -60,7 +60,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-6 col-lg-2 mt-md-5 mt-lg-0">
+          <div className="col-12 col-md-6 col-lg-2 mt-5 mt-lg-0">
             <h5 className="fs-20 fw-600 color-black font-nunito">
               Experiência
             </h5>
@@ -73,7 +73,7 @@ const Footer = () => {
               <li className="fs-18 fw-400 color-default my-2">Ajuda</li>
             </ul>
           </div>
-          <div className="col-12 col-md-6 col-lg-3 mt-md-5 mt-lg-0">
+          <div className="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
             <h5 className="fs-20 fw-600 color-black font-nunito">
               Redes sociais
             </h5>

@@ -2,6 +2,7 @@ import React from "react";
 import themeConfig from "../configs/themeConfig";
 import classnames from "classnames";
 import Footer from "./components/footer/footer";
+import Header from './components/header/header'
 const FullPageLayout = ({ children, ...rest }) => {
   return (
     <div
@@ -16,7 +17,7 @@ const FullPageLayout = ({ children, ...rest }) => {
         <div className="content-wrapper">
           <div className="content-body">
             <div className="flexbox-container">
-              <div>FullPageLayout</div>
+              <Header/>
               <main className="main w-100 h-100">{children}</main>
             </div>
           </div>

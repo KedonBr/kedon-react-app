@@ -1,0 +1,1 @@
+export const USER_TYPE = 'THIS_USER_TYPE'
