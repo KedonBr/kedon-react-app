@@ -19,6 +19,8 @@ const unauthorized = lazy(() => import("./screens/defaultPages/401"))
 const notFound = lazy(() => import("./screens/defaultPages/404"))
 const login = lazy(() => import("./screens/login/login"))
 const register = lazy(() => import("./screens/register/register"))
+const recoverPassword = lazy(() => import("./screens/recoverPassword/recoverPassword"))
+const newPassword = lazy(() => import("./screens/newPassword/newPassword"))
 
 const supportsHistory = "pushState" in window.history;
 // Set Layout and Component Using App Route
@@ -63,11 +65,13 @@ class AppRouter extends React.Component {
       // Set the directory path if you are deploying in sub-folder
       <Router history={history}>
         <Switch>
-          <ProtectedRoute exact={true} path="/home" component={home} layout={"horizontal"} permission={["administrator", "pacients", "doctors", "partners"]} />
           <PublicRoute exact={true} path="/login" component={login} layout={"full"} />
+          <PublicRoute exact={true} path="/recuperar-senha" component={recoverPassword} layout={"full"} />
+          <PublicRoute exact={true} path="/nova-senha" component={newPassword} layout={"full"} />
           <PublicRoute exact={true} path="/cadastro" component={register} layout={"full"} />
           <PublicRoute exact={true} path="/unauthorized" component={unauthorized} layout={"full"} />
           <PublicRoute exact={true} path="/" component={login} layout={"full"} />
+          <ProtectedRoute exact={true} path="/home" component={home} layout={"horizontal"} permission={["administrator", "pacients", "doctors", "partners"]} />
           <ProtectedRoute exact={true} path="/doctors" component={doctors} layout={"horizontal"} permission={["administrator", "doctors"]} />
           {/*<ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />*/}
           <ProtectedRoute exact path="/profile" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />

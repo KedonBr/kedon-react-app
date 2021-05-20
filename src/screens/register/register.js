@@ -1,114 +1,290 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Form } from "@unform/web";
 import { cpfMask, rgMask, dateMask } from "../../utils/mask";
+import emailIsValid from "../../utils/email";
+import cpfIsValid from "../../utils/cpf";
 import Input from "../../components/input/input";
-import InputSelect from "../../components/inputSelect/inputSelect"
-import * as Yup from "yup";
-import './register.scss';
-import { estados } from './utils/estados'
-import { cidades } from './utils/cidades'
-import validateCPF from '../../utils/cpf'
+import InputSelect from "../../components/inputSelect/inputSelect";
+import "./register.scss";
+import { estados } from "./utils/estados";
+import { cidades } from "./utils/cidades";
 const Register = () => {
-    const [states, setStates] = useState([])
-    const [stateId, setStateId] = useState()
-    const [cities, setCities] = useState([])
-    const formRef = useRef(null);
-    const handlerError = (name) => {
-        formRef.current.setFieldError(`${name}`, '');
-    }
-    const rg = (name) => {
-        const rg = formRef.current.getFieldValue(`${name}`)
-        formRef.current.setFieldValue(`${name}`, rgMask(rg))
-        formRef.current.setFieldError(`${name}`, '');
-    }
-    const cpf = (name) => {
-        const cpf = formRef.current.getFieldValue(`${name}`)
-        formRef.current.setFieldValue(`${name}`, cpfMask(cpf))
-        const cpfIsValid = validateCPF(cpf)
-        if (!cpfIsValid.isValid) {
-            console.log(validateCPF().messageInvalid)
-            formRef.current.setFieldError('cpf', cpfIsValid.messageInvalid);
-        } else {
-            formRef.current.setFieldError(`${name}`, '')
-        }
-    }
-    const date = (name) => {
-        const date = formRef.current.getFieldValue(`${name}`)
-        formRef.current.setFieldValue(`${name}`, dateMask(date))
-        formRef.current.setFieldError(`${name}`, '');
-    }
-    function select(e) {
-        console.log(e.id)
-        setCities(cidades.filter(city => (city.estado == e.id)))
-        formRef.current.setFieldError('state', '');
-    }
-    const handleSubmit = async (data, { reset }) => {
-        console.log(data)
-        const password = formRef.current.getFieldValue('password')
-        const password_confirm = formRef.current.getFieldValue('password_confirm')
-        if (password !== password_confirm) {
-            formRef.current.setFieldError('password_confirm', 'Os dois campos de senha devem ser iguais');
-            console.log('diferentes')
-        } else {
+    const [states, setStates] = useState([]);
+    const [cities, setCities] = useState([]);
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        rg: "",
+        cpf: "",
+        birth_date: "",
+        state: "",
+        city: "",
+        rg: "",
+        health_plan: "",
+        voucher: "",
+        health_insurance: "",
+        registration_agreement: "",
+        allergies: "",
+        blood_type: "",
+        password: "",
+        password_confirm: "",
+    });
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        rg: "",
+        cpf: "",
+        birth_date: "",
+        state: "",
+        city: "",
+        rg: "",
+        health_plan: "",
+        voucher: "",
+        health_insurance: "",
+        registration_agreement: "",
+        allergies: "",
+        blood_type: "",
+        password: "",
+        password_confirm: "",
+    });
 
-            try {
-                const schema = Yup.object().shape({
-                    name: Yup.string().required("Digite seu Nome!"),
-                    email: Yup.string().email("Digite um Email Válido!").required("Digite seu E-mail!"),
-                    rg: Yup.string().required("Digite seu RG!"),
-                    cpf: Yup.string().required("Digite seu CPF!"),
-                    data_od_birth: Yup.string().required("Coloque sua data de nascimento!"),
-                    state: Yup.string().required("Digite seu estado!"),
-                    city: Yup.string().required("Digite sua cidade!"),
-                    password: Yup.string().min(8, 'No minimo 8 caracteres!').required("Digite sua senha!"),
-                    password_confirm: Yup.string().required("Digite sua senha!"),
-                });
-                await schema.validate(data, {
-                    abortEarly: false,
-                });
-                console.log(data);
-                formRef.current.setErrors({});
-                reset();
-            } catch (err) {
-                if (err instanceof Yup.ValidationError) {
-                    const errorMessages = {};
-                    err.inner.forEach((error) => {
-                        errorMessages[error.path] = error.message;
-                    });
-                    formRef.current.setErrors(errorMessages);
-                }
-            }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!data.name.trim()) {
+            errors.name = "Digite seu CPF!";
+        }
+        if (!data.email.trim()) {
+            errors.email = "Digite sua senha!";
+        } else if (!emailIsValid(data.email).isValid) {
+            errors.email = "Este e-mail é inválido!";
+            console.log("Email Inválido");
+        }
+        if (!data.rg.trim()) {
+            errors.rg = "Digite seu RG!";
+        }
+        if (!data.cpf.trim()) {
+            errors.cpf = "Digite seu CPF!";
+        } else if (!cpfIsValid(data.cpf).isValid) {
+            errors.cpf = "Este CPF é inválido!";
+        }
+        if (!data.birth_date.trim()) {
+            errors.birth_date = "Digite sua data de nascimento!";
+        } else if (data.birth_date.length < 10) {
+            errors.birth_date = "Esta data é inválida!";
+        }
+        if (!data.state.trim()) {
+            errors.state = "Selecione seu estado!"
+        }
+        if (!data.city.trim()) {
+            errors.city = "Selecione sua cidade!"
+        }
+        if (!data.password.trim()) {
+            errors.password = "Digite uma senha!"
+        } else if(data.password.length < 8) {
+            errors.password = "A senha deve pelo menos 8 dígitos!"
+        } else if(data.password_confirm !== data.password) {
+            errors.password_confirm = "Os campos devem ser iguais!"
+        }
+        if(!data.password_confirm.trim()) {
+            errors.password_confirm = "Digite sua senha novamente!"
+        } else if(data.password_confirm !== data.password) {
+            errors.password_confirm = "Os campos devem ser iguais!"
         }
 
+            const { name, value } = e.target;
+        setErrors({
+            ...errors,
+            [name]: value,
+        });
+        console.log(data);
+    };
+
+    const handleState = (e) => {
+        const { value } = e;
+        setErrors({
+            ...errors,
+            state: "",
+        });
+        setData({
+            ...data,
+            state: value,
+        });
+        setCities(cidades.filter((city) => city.estado == e.id));
+    };
+    const handleCity = (e) => {
+        const { value } = e;
+        setErrors({
+            ...errors,
+            city: "",
+        });
+        setData({
+            ...data,
+            city: value,
+        });
+    };
+    const handleDate = (e) => {
+        const { name, value } = e.target;
+        setErrors({
+            ...errors,
+            [name]: "",
+        });
+        setData({
+            ...data,
+            [name]: dateMask(value),
+        });
+    };
+    const handleRG = (e) => {
+        const { name, value } = e.target;
+        setErrors({
+            ...errors,
+            [name]: "",
+        });
+        setData({
+            ...data,
+            [name]: rgMask(value),
+        });
+    };
+    const handleCPF = (e) => {
+        const { name, value } = e.target;
+        setErrors({
+            ...errors,
+            [name]: "",
+        });
+        setData({
+            ...data,
+            [name]: cpfMask(value),
+        });
+    };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setErrors({
+            ...errors,
+            [name]: "",
+        });
+        setData({
+            ...data,
+            [name]: value,
+        });
     };
     useEffect(() => {
-        setStates(estados)
-    }, [])
+        setStates(estados);
+    }, []);
+    // function select(e) {
+    //     setCities(cidades.filter((city) => city.estado == e.id));
+    // }
     return (
         <section className="container d-flex justify-content-center py-5">
-            <div class="col-6 d-flex flex-column">
+            <div className="col-6 d-flex flex-column">
                 <span className="fs-16 fw-400 color-default py-3 px-2">
                     Login | Cadastro
         </span>
-                <Form ref={formRef} onSubmit={handleSubmit}>
-                    <Input name="name" placeholder="Nome Completo*" onChange={() => handlerError('name')} />
-                    <Input name="email" placeholder="E-mail*" onChange={() => handlerError('email')} />
-                    <Input name="rg" placeholder="RG*" onChange={() => rg('rg')} />
-                    <Input name="cpf" placeholder="CPF*" onChange={() => cpf('cpf')} />
-                    <Input name="data_od_birth" placeholder="Data de Nascimento*" onChange={() => date('data_od_birth')} />
-                    <InputSelect name="state" placeholder="Estado*" options={states} onChange={(e) => select(e)} />
-                    <InputSelect name="city" placeholder="Cidade*" options={cities} onChange={() => handlerError('city')} />
-                    <Input name="health_plan" placeholder="Plano de Saúde" />
-                    <Input name="voucher" placeholder="Voucher" />
-                    <Input name="health_insurance" placeholder="Convênio" />
+                <form onSubmit={handleSubmit}>
+                    <Input
+                        name="name"
+                        placeholder="Nome Completo*"
+                        onChange={handleChange}
+                        value={data.name}
+                        error={errors.name}
+                    />
+                    <Input
+                        name="email"
+                        placeholder="E-mail*"
+                        onChange={handleChange}
+                        value={data.email}
+                        error={errors.email}
+                    />
+                    <Input
+                        name="rg"
+                        placeholder="RG*"
+                        onChange={handleRG}
+                        value={data.rg}
+                        error={errors.rg}
+                    />
+                    <Input
+                        name="cpf"
+                        placeholder="CPF*"
+                        onChange={handleCPF}
+                        value={data.cpf}
+                        error={errors.cpf}
+                    />
+                    <Input
+                        name="birth_date"
+                        placeholder="Data de Nascimento*"
+                        onChange={handleDate}
+                        value={data.birth_date}
+                        error={errors.birth_date}
+                    />
+                    <InputSelect
+                        name="state"
+                        placeholder="Estado*"
+                        options={states}
+                        onChange={handleState}
+                        error={errors.state}
+                    />
+                    <InputSelect
+                        name="city"
+                        placeholder="Cidade*"
+                        options={cities}
+                        onChange={handleCity}
+                        error={errors.city}
+                    />
+                    <Input
+                        name="health_plan"
+                        placeholder="Plano de Saúde"
+                        onChange={handleChange}
+                        value={data.health_plan}
+                        error={errors.health_plan}
+                    />
+                    <Input
+                        name="voucher"
+                        placeholder="Voucher"
+                        onChange={handleChange}
+                        value={data.voucher}
+                        error={errors.voucher}
+                    />
+                    <Input
+                        name="health_insurance"
+                        placeholder="Convênio"
+                        onChange={handleChange}
+                        value={data.health_insurance}
+                        error={errors.health_insurance}
+                    />
                     <Input
                         name="registration_agreement"
                         placeholder="Matrícula convênio"
+                        onChange={handleChange}
+                        value={data.registration_agreement}
+                        error={errors.registration_agreement}
                     />
-                    <Input name="allergies" placeholder="Alergias" />
-                    <Input name="blood_type" placeholder="Tipo sanguíneo" onChange={() => handlerError('blood_type')} />
-                    <Input name="password" placeholder="Escolher senha*" type="password" onChange={() => handlerError('password')} />
-                    <Input name="password_confirm" placeholder="Repita senha*" type="password" onChange={() => handlerError('password_confirm')} />
+                    <Input
+                        name="allergies"
+                        placeholder="Alergias"
+                        onChange={handleChange}
+                        value={data.allergies}
+                        error={errors.allergies}
+                    />
+                    <Input
+                        name="blood_type"
+                        placeholder="Tipo sanguíneo"
+                        onChange={handleChange}
+                        value={data.blood_type}
+                        error={errors.blood_type}
+                    />
+                    <Input
+                        name="password"
+                        placeholder="Escolher senha*"
+                        type="password"
+                        onChange={handleChange}
+                        value={data.password}
+                        error={errors.password}
+                    />
+                    <Input
+                        name="password_confirm"
+                        placeholder="Repita senha*"
+                        type="password"
+                        onChange={handleChange}
+                        value={data.password_confirm}
+                        error={errors.password_confirm}
+                    />
                     <div className="col-8 mt-3">
                         <label className="d-flex align-items-center px-2">
                             <input type="checkbox" name="" />
@@ -122,9 +298,11 @@ const Register = () => {
                                 Declaro que li e estou ciente dos termos e condições de uso
               </p>
                         </label>
-                        <button type="submit" className="button__dark mt-3">Cadastrar</button>
+                        <button type="submit" className="button__dark mt-3">
+                            Cadastrar
+            </button>
                     </div>
-                </Form>
+                </form>
             </div>
         </section>
     );

@@ -1,5 +1,40 @@
 @import "../../assets/scss/app.scss";
-
+.user-type{
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    input[type="radio"]{
+        display: none;
+        &:checked ~ .user-type__button{
+            background: #071f68;
+            border-color: #071f68;
+            color: #FFF;
+        }
+    }
+    label{
+        display: block;
+        width: 100%;
+    }
+    &__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        font-size: 14px;
+        text-align: center;
+        background: transparent;
+        color: #bbbbbb;
+        border: 1px solid #bbbbbb;
+    }
+    .button-patient{
+        border-radius: 10px 0 0 10px;
+        border-right: transparent;
+    }
+    .button-doctor{
+        border-radius: 0 10px 10px 0;
+        border-left: transparent;
+    }
+}
 .banner {
     position: relative;
     &__border {

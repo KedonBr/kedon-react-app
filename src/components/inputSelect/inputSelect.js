@@ -9,33 +9,13 @@ const styles = {
         borderRadius: 10,
         borderColor: "#bbbbbb",
         marginBottom: 10,
+        backgroundColor: "#f3f3f3"
     }),
     singleValue: (styles) => ({ ...styles, fontSize: 18, color: "#707070" }),
     placeholder: (styles) => ({ ...styles, fontSize: 18, color: "#707070" }),
 };
-const InputSelect = ({ name, options, ...rest }) => {
-    const inputRef = useRef(null);
-    const { fieldName, registerField, defaultValue, error } = useField(name);
+const InputSelect = ({ name, options, error, ...rest }) => {
 
-    useEffect(() => {
-        registerField({
-            name: fieldName,
-            ref: inputRef.current,
-            path: "value",
-            getValue: (ref) => {
-                if (rest.isMulti) {
-                    if (!ref.state.value) {
-                        return [];
-                    }
-                    return ref.state.value.map((option) => option.value);
-                }
-                if (!ref.state.value) {
-                    return "";
-                }
-                return ref.state.value.value;
-            },
-        });
-    }, [fieldName, registerField]);
     return (
         <div>
             {error && (
@@ -44,9 +24,9 @@ const InputSelect = ({ name, options, ...rest }) => {
                 </span>
             )}
             <Select
+                name={name}
                 className="select"
                 options={options}
-                ref={inputRef}
                 {...rest}
                 styles={styles}
             />

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="row py-3">
           <div className="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0">
             <Logo width={200} />
-            <p class="fs-16 fw-400 color-default">
+            <p className="fs-16 fw-400 color-default">
               Aliquam eros lectus, ullamcorper et eros condimentum, finibus
               ullamcorper lorem
             </p>

@@ -34,7 +34,7 @@ const SideBar = () => {
           <Logo width={200} />
         </div>
         <div className="profile d-flex justify-content-between align-items-center px-4 py-2">
-          <div class="d-flex align-items-center">
+          <div className="d-flex align-items-center">
             <img
               className="profile__image"
               src="https://ogimg.infoglobo.com.br/in/24954685-f93-a27/FT1086A/xviuva.jpg.pagespeed.ic.CtHmw2NcIH.jpg"
@@ -44,7 +44,7 @@ const SideBar = () => {
             </legend>
           </div>
           <ArrowRight height={14} />
-          <div class="profile__dropdown">
+          <div className="profile__dropdown">
             <ul>
               <li className="profile__dropdown--item d-flex align-items-center py-2 px-4">
                 <div className="profile__dropdown--icon">

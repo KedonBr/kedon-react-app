@@ -16,7 +16,12 @@ import { ReactComponent as CreditCard } from '../assets/img/credit-card.svg';
 import { ReactComponent as Logout } from '../assets/img/logout.svg';
 import { ReactComponent as User } from '../assets/img/user.svg';
 import { ReactComponent as Padlock } from '../assets/img/padlock.svg';
-
+import { ReactComponent as Stethoscope } from '../assets/img/stethoscope.svg';
+import { ReactComponent as Doctor } from '../assets/img/doctor.svg';
+import { ReactComponent as CheckList } from '../assets/img/check-list.svg';
+import { ReactComponent as TimeIcon } from '../assets/img/time.svg';
+import { ReactComponent as Star } from '../assets/img/star.svg';
+import { ReactComponent as UnlitStar } from '../assets/img/unlit-star.svg';
 //Images
 import { ReactComponent as BannerPatient } from '../assets/img/banner-patient.svg';
 import { ReactComponent as BannerDoctor } from '../assets/img/banner-doctor.svg';
@@ -42,8 +47,12 @@ export {
     Logout,
     User,
     Padlock,
-
-
+    Stethoscope,
+    Doctor,
+    CheckList,
+    TimeIcon,
+    Star,
+    UnlitStar,
     
     BannerPatient,
     BannerDoctor,
