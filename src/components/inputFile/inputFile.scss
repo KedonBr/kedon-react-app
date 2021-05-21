@@ -1,0 +1,45 @@
+.upload{
+    width: 100%;
+    max-width: 400px;
+    &__item{
+        .trash{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent;
+        }
+        &--name{
+            white-space: nowrap;
+            max-width: 30ch;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
+.drop-container{
+    border: 2px dashed;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    .icon{
+        &--red{
+            path{
+                fill: #fd7676;
+            }
+        }
+        &--green{
+            path{
+                fill: #69c95e;
+            }
+        }
+        &--default{
+            path{
+                fill: #707070;
+            }
+        }
+    }
+}

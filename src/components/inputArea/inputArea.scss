@@ -1,0 +1,35 @@
+.input-area {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    height: auto;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &__area {
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        font-size: 18px;
+        font-weight: 100;
+        padding: 10px;
+        color: #707070;
+        resize: vertical;
+        &::-webkit-scrollbar{
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb{
+            background: #888888;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-track{
+            background: #c6c3c3;
+            border-radius: 10px;
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}

@@ -9,7 +9,7 @@ const styles = {
         borderRadius: 10,
         borderColor: "#bbbbbb",
         marginBottom: 10,
-        backgroundColor: "#f3f3f3"
+        backgroundColor: "transparent"
     }),
     singleValue: (styles) => ({ ...styles, fontSize: 18, color: "#707070" }),
     placeholder: (styles) => ({ ...styles, fontSize: 18, color: "#707070" }),

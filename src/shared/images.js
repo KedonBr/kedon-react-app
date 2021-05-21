@@ -22,6 +22,11 @@ import { ReactComponent as CheckList } from '../assets/img/check-list.svg';
 import { ReactComponent as TimeIcon } from '../assets/img/time.svg';
 import { ReactComponent as Star } from '../assets/img/star.svg';
 import { ReactComponent as UnlitStar } from '../assets/img/unlit-star.svg';
+import { ReactComponent as Calendar } from '../assets/img/calendar.svg'
+import { ReactComponent as UploadFile } from '../assets/img/upload-file.svg'
+import { ReactComponent as Document } from '../assets/img/document.svg'
+import { ReactComponent as Trash } from '../assets/img/trash.svg'
+import { ReactComponent as Archive } from '../assets/img/archive.svg'
 //Images
 import { ReactComponent as BannerPatient } from '../assets/img/banner-patient.svg';
 import { ReactComponent as BannerDoctor } from '../assets/img/banner-doctor.svg';
@@ -53,7 +58,12 @@ export {
     TimeIcon,
     Star,
     UnlitStar,
-    
+    Calendar,
+    UploadFile,
+    Document,
+    Trash,
+    Archive,
+
     BannerPatient,
     BannerDoctor,
     BorderBanner,

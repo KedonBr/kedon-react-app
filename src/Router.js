@@ -21,6 +21,8 @@ const login = lazy(() => import("./screens/login/login"))
 const register = lazy(() => import("./screens/register/register"))
 const recoverPassword = lazy(() => import("./screens/recoverPassword/recoverPassword"))
 const newPassword = lazy(() => import("./screens/newPassword/newPassword"))
+const consultations = lazy(() => import("./screens/consultations/consultations"))
+const payment = lazy(() => import("./screens/payment/payment"))
 
 const supportsHistory = "pushState" in window.history;
 // Set Layout and Component Using App Route
@@ -72,7 +74,9 @@ class AppRouter extends React.Component {
           <PublicRoute exact={true} path="/unauthorized" component={unauthorized} layout={"full"} />
           <PublicRoute exact={true} path="/" component={login} layout={"full"} />
           <ProtectedRoute exact={true} path="/home" component={home} layout={"horizontal"} permission={["administrator", "pacients", "doctors", "partners"]} />
+          <ProtectedRoute exact={true} path="/pagamentos" component={payment} layout={"horizontal"} permission={["administrator", "pacients", "doctors", "partners"]} />
           <ProtectedRoute exact={true} path="/doctors" component={doctors} layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/consultas" component={consultations} layout={"horizontal"} permission={["administrator", "doctors"]} />
           {/*<ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />*/}
           <ProtectedRoute exact path="/profile" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
           {/*<ProtectedRoute path="/example" component={example} layout={"horizontal"} permission={["administrator","supervisor", "agent"]} />*/}

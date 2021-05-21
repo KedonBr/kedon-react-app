@@ -25,7 +25,7 @@ const navigationConfig = [
     type: "item",
     icon: <Medkit/>,
     //permissions: ["admin", "editor"],
-    navLink: "/",
+    navLink: "/consultas",
   },
   {
     id: "classificados",
