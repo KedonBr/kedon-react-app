@@ -23,6 +23,9 @@ const recoverPassword = lazy(() => import("./screens/recoverPassword/recoverPass
 const newPassword = lazy(() => import("./screens/newPassword/newPassword"))
 const consultations = lazy(() => import("./screens/consultations/consultations"))
 const payment = lazy(() => import("./screens/payment/payment"))
+const healthHistory = lazy(() => import("./screens/healthHistory/healthHistory"))
+const addDocument = lazy(() => import("./screens/healthHistory/addDocument/addDocument"))
+const documents = lazy(() => import("./screens/documents/documents"))
 
 const supportsHistory = "pushState" in window.history;
 // Set Layout and Component Using App Route
@@ -77,6 +80,9 @@ class AppRouter extends React.Component {
           <ProtectedRoute exact={true} path="/pagamentos" component={payment} layout={"horizontal"} permission={["administrator", "pacients", "doctors", "partners"]} />
           <ProtectedRoute exact={true} path="/doctors" component={doctors} layout={"horizontal"} permission={["administrator", "doctors"]} />
           <ProtectedRoute exact={true} path="/consultas" component={consultations} layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/historico-de-saude" component={healthHistory} layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/historico-de-saude/adicionar-documento" component={addDocument} layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/documentos" component={documents} layout={"horizontal"} permission={["administrator", "doctors"]} />
           {/*<ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />*/}
           <ProtectedRoute exact path="/profile" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
           {/*<ProtectedRoute path="/example" component={example} layout={"horizontal"} permission={["administrator","supervisor", "agent"]} />*/}

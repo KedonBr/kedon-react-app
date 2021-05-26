@@ -1,10 +1,16 @@
+@import "../../../../assets/scss/app.scss";
+
 .star {
     margin: 0 2px;
 }
+
 .schedules {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 1rem;
+    width: 100%;
+    max-width: 750px;
+    box-sizing: border-box;
     &__profile {
         height: 130px;
         width: 130px;
@@ -18,6 +24,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        @include to($breakpoint-sm) {
+            padding-left: 0;
+        }
     }
     &__form {
         .modality {
@@ -41,89 +50,20 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 45px;
-                font-size: 18px;
+                height: 35px;
+                font-size: 14px;
                 text-align: center;
                 background: transparent;
                 color: #bbbbbb;
                 border: 1px solid #bbbbbb;
             }
             .button-left {
-                border-radius: 10px 0 0 10px;
+                border-radius: 7px 0 0 7px;
                 border-right: transparent;
             }
             .button-right {
-                border-radius: 0 10px 10px 0;
+                border-radius: 0 7px 7px 0;
                 border-left: transparent;
-            }
-        }
-    }
-    .button{
-        &__danger {
-            position: relative;
-            width: auto;
-            height: 30px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            background: #ec3658;
-            color: #fff;
-            padding: 1rem 2rem;
-            margin-left: 0.5rem;
-            transition: 0.3s;
-            &:hover::after {
-                opacity: 1;
-                visibility: visible;
-                left: 10px;
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: calc(50% - 6px);
-                width: 0;
-                height: 0;
-                border-top: 7px solid transparent;
-                border-bottom: 7px solid transparent;
-                border-left: 7px solid #fff;
-                transition: 0.3s;
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-        &__dark {
-            position: relative;
-            width: auto;
-            height: 30px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            background: #071f68;
-            color: #fff;
-            padding: 1rem 2rem;
-            transition: 0.3s;
-            &:hover::after {
-                opacity: 1;
-                visibility: visible;
-                left: 10px;
-            }
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: calc(50% - 6px);
-                width: 0;
-                height: 0;
-                border-top: 7px solid transparent;
-                border-bottom: 7px solid transparent;
-                border-left: 7px solid #FFF;
-                transition: 0.3s;
-                opacity: 0;
-                visibility: hidden;
             }
         }
     }

@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Input from "../../components/input/input";
+import Button from "../../components/button/button"
 import { cpfMask } from '../../utils/mask'
 import cpfIsValid from '../../utils/cpf'
 import {
@@ -13,6 +15,7 @@ import {
 import { Link } from "react-router-dom";
 import "./login.scss";
 const Login = () => {
+  let history = useHistory();
   const [userType, setUserType] = useState(true)
   const [data, setData] = useState({
     cpf: '',
@@ -34,13 +37,12 @@ const Login = () => {
       errors.password = "Digite sua senha!"
     }
     const { name, value } = e.target
-
+    
     setErrors({
       ...errors,
       [name]: value
     })
-
-    console.log()
+    history.push('/home')
   }
   const handleCPF = (e) => {
     const { name, value } = e.target
@@ -81,7 +83,7 @@ const Login = () => {
                   <span className="user-type__button button-patient">Sou Paciente</span>
                 </label>
                 <label>
-                  <input type="radio" name="user-type" onClick={() => setUserType(false)}/>
+                  <input type="radio" name="user-type" onClick={() => setUserType(false)} />
                   <span className="user-type__button button-doctor">Sou Médico</span>
                 </label>
               </div>
@@ -110,8 +112,10 @@ const Login = () => {
                 </label>
                 <Link to="/recuperar-senha" className="fs-16 fw-400 color-blue">Esqueci a senha</Link>
               </div>
-              <button type="submit" className="button__dark">Entrar</button>
-              <Link className="button__register" to="/cadastro">Cadastre-se</Link>
+              <Button type="submit" label="Entrar" color="blue" size="extra-large"/>
+              <Link className="button__register" to="/cadastro">
+                <Button label="Cadastre-se" color="light" size="extra-large"/>
+              </Link>
             </form>
           </div>
         </div>

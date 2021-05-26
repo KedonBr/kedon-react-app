@@ -6,7 +6,7 @@ const HorizontalLayout = ({ children }) => {
     <main className="main-app-body">
       <div className="d-flex align-items-stretch">
         <SideBar />
-        <div className="content-wrapper">
+        <div className="content-wrapper" style={window.innerWidth < 768 ? {marginTop: 50} : null}>
           {children}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Logo } from "../../shared/images";
 import { Link } from "react-router-dom";
-import Input from "../../components/input/input";
+import { Input, Button } from '../../components'
 import "./newPassword.scss";
 
 const NewPassword = () => {
@@ -75,7 +75,7 @@ const NewPassword = () => {
                     ) : null}
 
                     <div className="d-flex align-self-stretch justify-content-end align-items-center mt-3">
-                        <button type={data.password.length >= 8 ? "submit" : "button"} className={data.password.length >= 8 ? "button__active" : "button__inactive"}>Recuperar Senha</button>
+                        <Button type={data.password.length >= 8 ? "submit" : "button"} label="Definir Senha" color={data.password.length >= 8 ? "green" : "gray"} size="small" />
                     </div>
                 </form>
             </div>

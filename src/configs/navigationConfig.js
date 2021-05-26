@@ -46,7 +46,7 @@ const navigationConfig = [
         title: "Documentos",
         type: "item",
         //permissions: ["admin", "editor"],
-        navLink: "/"
+        navLink: "/documentos"
       },
       {
         id: "acessarProntuarios ",
@@ -54,6 +54,13 @@ const navigationConfig = [
         type: "item",
         //permissions: ["admin", "editor"],
         navLink: "#"
+      },
+      {
+        id: "historicoDeSaude ",
+        title: "Histórico de Saúde",
+        type: "item",
+        //permissions: ["admin", "editor"],
+        navLink: "/historico-de-saude"
       },
     ]
   },

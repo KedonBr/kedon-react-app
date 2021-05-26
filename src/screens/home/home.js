@@ -7,9 +7,15 @@ const Home = () => {
         <React.Fragment>
             <div className="section">
                 <h2 className="fs-24 fw-400 color-default">O que você precisa?</h2>
-                <div className="d-flex mt-3">
-                    <Card icon={<Stethoscope />} title={"Prontuários"} color={"gray"} />
-                    <Card icon={<Doctor />} title={"Médicos"} color={"green"} />
+                <div className="d-flex flex-wrap mt-3">
+                    <Card
+                        icon={<Stethoscope />}
+                        title={"Prontuários"}
+                        color={"gray"} />
+                    <Card
+                        icon={<Doctor />}
+                        title={"Médicos"}
+                        color={"green"} />
                     <Card
                         icon={<CheckList />}
                         title={"Consultas Agendadas"}
@@ -27,7 +33,7 @@ const Home = () => {
                 <div className="d-flex flex-column mt-3">
                     <Appointment
                         image={"https://posfg.com.br/wp-content/uploads/2020/10/POSFG-Dia-do-m%C3%A9dico-site.png"}
-                        name={"Dr. Lorem Ipsum"}
+                        name={"Dr. Lorem Ipsum Lorem Ipsum Lorem Ipsum"}
                         stars={"4.0"}
                         sector={"Oftamologista"}
                         time={"10.00 - 20.00"}
@@ -131,12 +137,13 @@ const Home = () => {
             <div className="section">
                 <h2 className="fs-24 fw-400 color-default">Agendar Consultas</h2>
                 <div className="d-flex flex-column mt-3">
-                <Appointment
+                    <Appointment
                         image={"https://posfg.com.br/wp-content/uploads/2020/10/POSFG-Dia-do-m%C3%A9dico-site.png"}
                         name={"Dr. Lorem Ipsum"}
                         stars={"4.0"}
                         sector={"Oftamologista"}
                         time={"10.00 - 20.00"}
+                        value={30}
                         online={true}
                         // scheduled === agendada
                         scheduled={false}
@@ -153,6 +160,7 @@ const Home = () => {
                         stars={"4.0"}
                         sector={"Pediatra"}
                         time={"08.00 - 17.00 "}
+                        value={60}
                         online={true}
                         // scheduled === agendada
                         scheduled={false}
@@ -169,6 +177,7 @@ const Home = () => {
                         stars={"4.0"}
                         sector={"Cirurgião"}
                         time={"10.00 - 20.00"}
+                        value={260}
                         online={true}
                         // scheduled === agendada
                         scheduled={false}
@@ -184,7 +193,7 @@ const Home = () => {
             <div className="section">
                 <h2 className="fs-24 fw-400 color-default">Outros Médicos</h2>
                 <div className="d-flex flex-column mt-3">
-                <Appointment
+                    <Appointment
                         image={"https://posfg.com.br/wp-content/uploads/2020/10/POSFG-Dia-do-m%C3%A9dico-site.png"}
                         name={"Dr. Lorem Ipsum"}
                         stars={"4.0"}

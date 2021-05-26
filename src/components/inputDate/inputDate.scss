@@ -1,0 +1,65 @@
+.react-datepicker__header{
+    background-color: #071f68;
+    .react-datepicker__current-month{
+        color: #FFF;
+    }
+    .react-datepicker__day-name{
+        color: #FFF;
+    }
+    
+}
+.react-datepicker__navigation--previous{
+    border-right-color: #FFF;
+}
+.react-datepicker__navigation--next{
+    border-left-color: #FFF;
+}
+.react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle::before{
+    border-bottom-color: #071f68;
+}
+
+.react-datepicker__day--keyboard-selected, .react-datepicker__month-text--keyboard-selected, .react-datepicker__quarter-text--keyboard-selected, .react-datepicker__year-text--keyboard-selected{
+    background-color: #071f68
+}
+.react-datepicker__day--selected, .react-datepicker__day--in-selecting-range, .react-datepicker__day--in-range, .react-datepicker__month-text--selected, .react-datepicker__month-text--in-selecting-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--selected, .react-datepicker__quarter-text--in-selecting-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--selected, .react-datepicker__year-text--in-selecting-range, .react-datepicker__year-text--in-range{
+    background-color: #071f68;
+}
+.react-datepicker-wrapper{
+    width: 100%;
+    max-width: 300px;
+}
+.react-datepicker__input-container{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    height: auto;
+    padding: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    &::after{
+        content: '';
+        position: absolute;
+        right: 15px;
+        top: calc(50% -15px);
+        display: block;
+        background: url(../../assets/img/calendar.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 30px;
+    }
+    input{
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        font-size: 18px;
+        font-weight: 100;
+        padding: 10px;
+        color: #707070;
+        position: relative;
+    }
+}

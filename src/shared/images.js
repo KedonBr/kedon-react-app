@@ -27,6 +27,11 @@ import { ReactComponent as UploadFile } from '../assets/img/upload-file.svg'
 import { ReactComponent as Document } from '../assets/img/document.svg'
 import { ReactComponent as Trash } from '../assets/img/trash.svg'
 import { ReactComponent as Archive } from '../assets/img/archive.svg'
+import { ReactComponent as ChipCreditCard } from '../assets/img/chip-credit-card.svg'
+import { ReactComponent as Share } from '../assets/img/share.svg'
+import { ReactComponent as Eye } from '../assets/img/eye.svg'
+import { ReactComponent as Download } from '../assets/img/download.svg'
+import { ReactComponent as Goback } from '../assets/img/goback.svg'
 //Images
 import { ReactComponent as BannerPatient } from '../assets/img/banner-patient.svg';
 import { ReactComponent as BannerDoctor } from '../assets/img/banner-doctor.svg';
@@ -63,7 +68,14 @@ export {
     Document,
     Trash,
     Archive,
+    ChipCreditCard,
+    Share,
+    Eye,
+    Download,
+    Goback,
 
+
+    
     BannerPatient,
     BannerDoctor,
     BorderBanner,

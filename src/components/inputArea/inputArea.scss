@@ -1,3 +1,4 @@
+@import "../../assets/scss/app.scss";
 .input-area {
     display: flex;  
     justify-content: center;
@@ -17,6 +18,9 @@
         padding: 10px;
         color: #707070;
         resize: vertical;
+        @include to($breakpoint-sm){
+            font-size: 16px;
+        }
         &::-webkit-scrollbar{
             width: 10px;
         }

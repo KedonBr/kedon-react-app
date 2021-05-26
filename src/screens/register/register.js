@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { cpfMask, rgMask, dateMask } from "../../utils/mask";
+import { Input, InputSelect, Button } from '../../components'
 import emailIsValid from "../../utils/email";
 import cpfIsValid from "../../utils/cpf";
-import Input from "../../components/input/input";
-import InputSelect from "../../components/inputSelect/inputSelect";
 import "./register.scss";
 import { estados } from "./utils/estados";
 import { cidades } from "./utils/cidades";
@@ -79,18 +78,18 @@ const Register = () => {
         }
         if (!data.password.trim()) {
             errors.password = "Digite uma senha!"
-        } else if(data.password.length < 8) {
+        } else if (data.password.length < 8) {
             errors.password = "A senha deve pelo menos 8 dígitos!"
-        } else if(data.password_confirm !== data.password) {
+        } else if (data.password_confirm !== data.password) {
             errors.password_confirm = "Os campos devem ser iguais!"
         }
-        if(!data.password_confirm.trim()) {
+        if (!data.password_confirm.trim()) {
             errors.password_confirm = "Digite sua senha novamente!"
-        } else if(data.password_confirm !== data.password) {
+        } else if (data.password_confirm !== data.password) {
             errors.password_confirm = "Os campos devem ser iguais!"
         }
 
-            const { name, value } = e.target;
+        const { name, value } = e.target;
         setErrors({
             ...errors,
             [name]: value,
@@ -173,10 +172,8 @@ const Register = () => {
     // }
     return (
         <section className="container d-flex justify-content-center py-5">
-            <div className="col-6 d-flex flex-column">
-                <span className="fs-16 fw-400 color-default py-3 px-2">
-                    Login | Cadastro
-        </span>
+            <div className="col-12 col-md-6 d-flex flex-column">
+                <span className="fs-16 fw-400 color-default py-3 px-2">Login | Cadastro</span>
                 <form onSubmit={handleSubmit}>
                     <Input
                         name="name"
@@ -285,22 +282,22 @@ const Register = () => {
                         value={data.password_confirm}
                         error={errors.password_confirm}
                     />
-                    <div className="col-8 mt-3">
+                    <div className="col-8 mt-2">
                         <label className="d-flex align-items-center px-2">
                             <input type="checkbox" name="" />
                             <p className="fs-16 fw-400 color-default px-2">
                                 Assinar newsletter
-              </p>
+                            </p>
                         </label>
                         <label className="d-flex align-items-center mt-2 px-2">
                             <input className="mb-4" type="checkbox" name="" />
                             <p className="fs-16 fw-400 color-default px-2">
                                 Declaro que li e estou ciente dos termos e condições de uso
-              </p>
+                            </p>
                         </label>
-                        <button type="submit" className="button__dark mt-3">
-                            Cadastrar
-            </button>
+                        <div className="mt-3">
+                            <Button type="submit" label="Cadastrar" color="blue" size="extra-large" />
+                        </div>
                     </div>
                 </form>
             </div>

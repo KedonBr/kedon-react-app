@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Input from '../../components/input/input';
+import { Link } from 'react-router-dom';
+import { Input, Button } from '../../components'
 import { Logo } from '../../shared/images'
 import { cpfMask } from '../../utils/mask';
 import cpfIsValid from '../../utils/cpf'
 import './recoverPassword.scss'
-import { Link } from 'react-router-dom';
 
 const RecoverPassword = () => {
     const [CPF, setCPF] = useState('');
@@ -37,8 +37,10 @@ const RecoverPassword = () => {
                         error={error}
                     />
                     <div className="d-flex align-self-stretch justify-content-between align-items-center mt-3">
-                        <Link to="login" className="button__dark">Voltar para Login</Link>
-                        <button type={CPF.length < 14 ? 'button' : 'submit'} className={CPF.length < 14 ? 'button__inactive' : 'button__active'}>Recuperar Senha</button>
+                        <Link to="/login">
+                            <Button label="Voltar para Login" color="blue" size="small" />
+                        </Link>
+                        <Button type={CPF.length < 14 ? 'button' : 'submit'} label="Recuperar Senha" color={CPF.length < 14 ? 'gray' : 'green'} size="small"/>
                     </div>
                 </form>
             </div>

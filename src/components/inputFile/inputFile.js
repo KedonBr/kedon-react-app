@@ -1,32 +1,17 @@
 import React, { useState } from "react";
 import Dropzone from "react-dropzone";
 import { UploadFile, Archive, Trash } from "../../shared/images";
-import bytesToSize from '../../utils/bytesToSize'
 import "./inputFile.scss";
 
-const InputFile = () => {
+const InputFile = ({ accept, handleUpload,handleDelete, uploads, error }) => {
     const [messageStyle, setMessageStyle] = useState();
     const [iconStyle, setIconStyle] = useState();
-    const [uploads, setUploads] = useState([]);
-    const handleDelete = (id) => {
-        const NewUploads = uploads.filter(item => (item.id !== id))
-        setUploads(NewUploads)
-    }
-    const handleUpload = (files) => {
-        const uploadedFile = files.map(file => ({
-            file,
-            id: uploads.length,
-            name: file.name,
-            size: bytesToSize(file.size)
-        }))
-        setUploads(uploads.concat(uploadedFile))
-    }
     const renderDragMessage = (isDragActive, isDragReject) => {
         if (!isDragActive) {
             setMessageStyle("#c5c5c5");
             setIconStyle('icon--default')
             return (
-                <p className="fs-20 fw-400 color-default text-center">
+                <p className="fs-16 fs-sm-20 fw-400 color-default text-center">
                     Arraste os arquivos aqui...
                 </p>
             );
@@ -35,7 +20,7 @@ const InputFile = () => {
             setMessageStyle("#fd7676");
             setIconStyle('icon--red')
             return (
-                <p className="fs-20 fw-400 color-default text-center"
+                <p className="fs-16 fs-sm-20 fw-400 color-default text-center"
                     style={{ color: messageStyle }}>
                     Arquivo não suportado!
                 </p>
@@ -44,7 +29,7 @@ const InputFile = () => {
         setMessageStyle("#69c95e");
         setIconStyle('icon--green')
         return (
-            <p className="fs-20 fw-400 color-default text-center"
+            <p className="fs-16 fs-sm-20 fw-400 color-default text-center"
                 style={{ color: messageStyle }}>
                 Solte os arquivos aqui
             </p>
@@ -54,7 +39,7 @@ const InputFile = () => {
         <React.Fragment>
             <ul className="upload">
                 {uploads.map(file => (
-                    <li className="upload__item d-flex justify-content-between align-items-center py-2">
+                    <li className="upload__item d-flex justify-content-between align-items-center py-2" key={file.id}>
                         <div className="d-flex align-items-center">
                             <Archive height={35} width={35} className="mx-2" />
                             <div className="d-flex flex-column">
@@ -68,7 +53,12 @@ const InputFile = () => {
                     </li>
                 ))}
             </ul>
-            <Dropzone accept="image/*" onDropAccepted={handleUpload} multiple={false}>
+            {error && (
+                <span className="d-block fs-14 fw-400 color-red px-2 pb-1">
+                    {error}
+                </span>
+            )}
+            <Dropzone accept={accept} onDropAccepted={handleUpload} multiple={false}>
                 {({ getRootProps, getInputProps, isDragActive, isDragReject }) => (
                     <div
                         className="drop-container"
