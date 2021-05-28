@@ -17,7 +17,7 @@ const navigationConfig = [
     type: "item",
     icon: <Profile/>,
     //permissions: ["admin", "editor"],
-    navLink: "/profile",
+    navLink: "/perfil",
   },
   {
     id: "consultas",
@@ -53,7 +53,7 @@ const navigationConfig = [
         title: "Acessar Prontuários",
         type: "item",
         //permissions: ["admin", "editor"],
-        navLink: "#"
+        navLink: "/prontuarios"
       },
       {
         id: "historicoDeSaude ",
@@ -78,7 +78,7 @@ const navigationConfig = [
     type: "item",
     icon: <Notification/>,
     //permissions: ["admin", "editor"],
-    navLink: "#"
+    navLink: "/notificacoes"
   },
 ]
 

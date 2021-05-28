@@ -23,7 +23,7 @@ const SideBar = () => {
   return (
     <React.Fragment>
       {
-        window.innerWidth < 768 ?
+        window.innerWidth < 1200 ?
           <div className="header-mobile d-flex justify-content-between align-items-center">
             <label className="menu">
               <input type="checkbox" onClick={() => setIsOpen(!isOpen)} />
@@ -37,7 +37,7 @@ const SideBar = () => {
           :
           null
       }
-      <div className={`sidebar-content${window.innerWidth < 768 ? isOpen ? ' sidebarIsOpen' : ' sidebarIsClose' : ''}`}>
+      <div className={`sidebar-content${window.innerWidth < 1200 ? isOpen ? ' sidebarIsOpen' : ' sidebarIsClose' : ''}`}>
         <div className="d-flex justify-content-center">
           <Logo width={200} />
         </div>

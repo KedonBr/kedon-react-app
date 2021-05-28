@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { Button, Header, Input } from '../../components'
-import { Share, Eye, Download, Search } from "../../shared/images";
-import "./healthHistory.scss";
+import React from 'react';
+import { Link } from 'react-router-dom'
+import { Header, Button, Input } from '../../components'
+import { Share, Eye, Download, Search } from '../../shared/images'
+import './medicalRecords.scss';
 
 const actions = (
     <div className="d-flex justify-content-center align-items-center">
@@ -54,11 +54,10 @@ const historyData = [
         actions: actions,
     },
 ];
-const HealthHistory = () => {
-    const history = useHistory()
+const MedicalRecords = () => {
     return (
         <React.Fragment>
-            <Header title="Histórico de saúde"/>
+            <Header title="Prontuários"/>
             <div className="section">
                 <div className="content-center">
                     <div className="d-flex">
@@ -106,7 +105,7 @@ const HealthHistory = () => {
                 </div>
             </div>
         </React.Fragment>
-    );
-};
+    )
+}
 
-export default HealthHistory;
+export default MedicalRecords;

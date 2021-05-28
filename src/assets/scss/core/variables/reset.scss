@@ -174,6 +174,7 @@ button:focus {
 }
 button {
     cursor: pointer;
+    background: transparent;
 }
 a {
     text-decoration: none;
@@ -181,13 +182,18 @@ a {
 html {
     box-sizing: border-box;
 }
-
 .section {
     background: #fff;
     margin-top: 10px;
     padding: 1rem 1rem;
 }
-
+.content {
+    max-width: 750px;
+}
+.content-center {
+    max-width: 750px;
+    margin: 0 auto;
+}
 @media (min-width: 768px) {
     .section {
         background: #fff;

@@ -3,7 +3,7 @@
 .sidebar-content {
     width: 300px;
     background: #fff;
-    @include to($breakpoint-md) {
+    @include to($breakpoint-xl) {
         position: fixed;
         top: 50px;
         height: calc(100vh - 50px);
@@ -20,7 +20,7 @@
             opacity: 1;
             visibility: visible;
             left: 100%;
-            @include to($breakpoint-md) {
+            @include to($breakpoint-xl) {
                 opacity: 1;
                 visibility: visible;
                 left: 0;
@@ -123,8 +123,7 @@
             left: 100%;
             z-index: 999;
             box-sizing: border-box;
-            width: 100%;
-            @include to($breakpoint-md) {
+            @include to($breakpoint-xl) {
                 left: 0;
                 top: 100%;
             }
@@ -154,6 +153,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 240ms ease;
+            width: 100%;
             &--item {
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
                 margin-bottom: 5px;

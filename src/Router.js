@@ -14,7 +14,6 @@ import { useParams } from "react-router";
 // Route-based code splitting
 const home = lazy(() => import("./screens/home/home"))
 const doctors = lazy(() => import("./screens/doctors/doctors"))
-const profile = lazy(() => import("./screens/profile/profile"))
 const unauthorized = lazy(() => import("./screens/defaultPages/401"))
 const notFound = lazy(() => import("./screens/defaultPages/404"))
 const login = lazy(() => import("./screens/login/login"))
@@ -26,6 +25,11 @@ const payment = lazy(() => import("./screens/payment/payment"))
 const healthHistory = lazy(() => import("./screens/healthHistory/healthHistory"))
 const addDocument = lazy(() => import("./screens/healthHistory/addDocument/addDocument"))
 const documents = lazy(() => import("./screens/documents/documents"))
+const profile = lazy(() => import("./screens/profile/profile"))
+const editProfile = lazy(() => import("./screens/profile/editProfile/editProfile"))
+const editPlan = lazy(() => import("./screens/profile/editPlan/editPlan"))
+const notifications = lazy(() => import("./screens/notifications/notifications"))
+const medicalRecords = lazy(() => import("./screens/medicalRecords/medicalRecords"))
 
 const supportsHistory = "pushState" in window.history;
 // Set Layout and Component Using App Route
@@ -83,8 +87,12 @@ class AppRouter extends React.Component {
           <ProtectedRoute exact={true} path="/historico-de-saude" component={healthHistory} layout={"horizontal"} permission={["administrator", "doctors"]} />
           <ProtectedRoute exact={true} path="/historico-de-saude/adicionar-documento" component={addDocument} layout={"horizontal"} permission={["administrator", "doctors"]} />
           <ProtectedRoute exact={true} path="/documentos" component={documents} layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/notificacoes" component={notifications} layout={"horizontal"} permission={["administrator", "doctors"]} />
+          <ProtectedRoute exact={true} path="/prontuarios" component={medicalRecords} layout={"horizontal"} permission={["administrator", "doctors"]} />
           {/*<ProtectedRoute exact={true} path="/doctors" component={doctors}  layout={"full"} permission={["administrator","pacients", "doctors", "partners"]} />*/}
-          <ProtectedRoute exact path="/profile" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
+          <ProtectedRoute exact path="/perfil" component={profile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
+          <ProtectedRoute exact path="/perfil/editar-perfil" component={editProfile} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
+          <ProtectedRoute exact path="/perfil/editar-plano" component={editPlan} layout={"horizontal"} permission={["administrator", "doctors", "pacients"]} />
           {/*<ProtectedRoute path="/example" component={example} layout={"horizontal"} permission={["administrator","supervisor", "agent"]} />*/}
           <AppRoute component={notFound} layout={"full"} />
         </Switch>

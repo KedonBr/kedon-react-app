@@ -1,0 +1,64 @@
+@import "../../../../assets/scss/app.scss";
+.notification {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    max-width: 750px;
+    margin: 1rem 0;
+    &__icon {
+        min-height: 80px;
+        min-width: 80px;
+        max-height: 80px;
+        max-width: 80px;
+        border-radius: 10px;
+        background: #bbbbbb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include to($breakpoint-sm) {
+            min-height: 60px;
+            min-width: 60px;
+            max-height: 60px;
+            max-width: 60px;
+        }
+        svg {
+            min-height: 40px;
+            min-width: 40px;
+            max-height: 40px;
+            max-width: 40px;
+            object-fit: contain;
+            @include to($breakpoint-sm) {
+                min-height: 30px;
+                min-width: 30px;
+                max-height: 30px;
+                max-width: 30px;
+            }
+            path {
+                fill: #fff;
+            }
+        }
+        &--blue {
+            background: #071f68;
+        }
+        &--red {
+            background: #ec3658;
+        }
+        &--green {
+            background: #77cf1f;
+        }
+        &--yellow {
+            background: #ecb819;
+        }
+        &--gray {
+            background: #8b8b8b;
+        }
+        &--light {
+            background-color: #1fd0e0;
+        }
+    }
+    &__content {
+        width: 100%;
+        padding-left: 1rem;
+    }
+}

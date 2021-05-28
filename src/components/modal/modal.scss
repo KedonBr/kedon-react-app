@@ -1,0 +1,70 @@
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    &__container {
+        position: relative;
+        width: 100%;
+        max-width: 750px;
+        padding: 1rem;
+        max-height: 600px;
+        background: #fff;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(100px);
+        visibility: hidden;
+        transition: 0.5s;
+        box-sizing: border-box;
+        &--close {
+            position: absolute;
+            right: 0.5rem;
+            top: 0.5rem;
+        }
+        .main-modal{
+            max-height: 485px;
+            max-width: 100%;
+            position: relative;
+            overflow-y: auto;
+            box-sizing: border-box;
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #bbbbbb;
+                border-radius: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                background: #f3f3f3;
+            }
+        }
+    }
+    &--opened {
+        opacity: 1;
+        visibility: visible;
+        .modal__container {
+            opacity: 1;
+            transform: translateY(0px);
+            visibility: visible;
+        }
+    }
+    &--closed {
+        opacity: 0;
+        visibility: hidden;
+        .modal__container {
+            opacity: 0;
+            transform: translateY(100px);
+            visibility: hidden;
+        }
+    }
+}

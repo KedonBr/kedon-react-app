@@ -1,10 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useField } from "@unform/core";
+import React from "react";
 import Select from "react-select";
 import "./inputSelect.scss";
-const styles = {
-    
-};
 const InputSelect = ({ name, options, error, ...rest }) => {
 
     return (

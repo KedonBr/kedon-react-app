@@ -31,7 +31,9 @@ import { ReactComponent as ChipCreditCard } from '../assets/img/chip-credit-card
 import { ReactComponent as Share } from '../assets/img/share.svg'
 import { ReactComponent as Eye } from '../assets/img/eye.svg'
 import { ReactComponent as Download } from '../assets/img/download.svg'
-import { ReactComponent as Goback } from '../assets/img/goback.svg'
+import { ReactComponent as GobackArrow } from '../assets/img/goback.svg'
+import { ReactComponent as Close } from '../assets/img/close.svg'
+import { ReactComponent as Search } from '../assets/img/search.svg'
 //Images
 import { ReactComponent as BannerPatient } from '../assets/img/banner-patient.svg';
 import { ReactComponent as BannerDoctor } from '../assets/img/banner-doctor.svg';
@@ -72,8 +74,9 @@ export {
     Share,
     Eye,
     Download,
-    Goback,
-
+    GobackArrow,
+    Close,
+    Search,
 
     
     BannerPatient,

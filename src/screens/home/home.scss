@@ -2,8 +2,11 @@
 
 .cards{
     overflow-x: scroll;
-    width: 100%;
-    max-width: 750px;
     box-sizing: border-box;
     display: flex;
+    
+    .cards-content{
+        width: 750px;
+        
+    }
 }

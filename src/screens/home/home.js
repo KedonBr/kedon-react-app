@@ -7,25 +7,27 @@ const Home = () => {
         <React.Fragment>
             <div className="section">
                 <h2 className="fs-24 fw-400 color-default">O que você precisa?</h2>
-                <div className="d-flex flex-wrap mt-3">
-                    <Card
-                        icon={<Stethoscope />}
-                        title={"Prontuários"}
-                        color={"gray"} />
-                    <Card
-                        icon={<Doctor />}
-                        title={"Médicos"}
-                        color={"green"} />
-                    <Card
-                        icon={<CheckList />}
-                        title={"Consultas Agendadas"}
-                        color={"red"}
-                    />
-                    <Card
-                        icon={<CheckList />}
-                        title={"Consultas Realizadas"}
-                        color={"blue"}
-                    />
+                <div className="cards mt-3">
+                    <div className="cards-content d-flex">
+                        <Card
+                            icon={<Stethoscope />}
+                            title={"Prontuários"}
+                            color={"gray"} />
+                        <Card
+                            icon={<Doctor />}
+                            title={"Médicos"}
+                            color={"green"} />
+                        <Card
+                            icon={<CheckList />}
+                            title={"Consultas Agendadas"}
+                            color={"red"}
+                        />
+                        <Card
+                            icon={<CheckList />}
+                            title={"Consultas Realizadas"}
+                            color={"blue"}
+                        />
+                    </div>
                 </div>
             </div>
             <div className="section">

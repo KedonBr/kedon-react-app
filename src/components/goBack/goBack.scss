@@ -1,0 +1,10 @@
+.goback {
+    &:hover p {
+        color: #2b4676;
+    }
+    &:hover svg {
+        path {
+            fill: #2b4676;
+        }
+    }
+}

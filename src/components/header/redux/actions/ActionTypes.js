@@ -1,0 +1,1 @@
+export const SHOW_MODAL_HEADER = 'SHOW_HEADER_MODAL';

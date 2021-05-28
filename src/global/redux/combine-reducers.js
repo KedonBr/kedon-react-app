@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import { homeReducer } from '../../screens/home/redux/reducers';
 import { loginReducer } from '../../screens/login/redux/reducers';
+import { headerReducer } from '../../components/header/redux/reducers';
 import authReducer from './authentication/reducer';
 
 export const rootReducer = combineReducers({
-    homeReducer: homeReducer,
     loginReducer: loginReducer,
+    headerReducer: headerReducer,
     auth: authReducer,
   });

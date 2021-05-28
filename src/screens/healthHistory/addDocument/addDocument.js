@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Goback } from "../../../shared/images";
+import { GobackArrow } from "../../../shared/images";
 import { dateMask } from '../../../utils/mask'
 import bytesToSize from '../../../utils/bytesToSize'
 import Button from "../../../components/button/button";
@@ -114,7 +114,7 @@ const AddDocument = () => {
             <div className="container">
                 <Link to="/historico-de-saude"
                     className="fs-20 fw-400 color-default d-flex align-items-center">
-                    <Goback height={25} width={25} className="mx-2" />
+                    <GobackArrow height={25} width={25} className="mx-2" />
                     Voltar
                 </Link>
                 <h2 className="fs-18 fs-sm-24 fw-400 color-default mx-2 mt-5">
