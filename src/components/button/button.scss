@@ -28,7 +28,7 @@
 }
 .size {
     &__extra-large {
-        width: 100%;
+        width: calc(100% - 0.5rem);
         height: 45px;
         font-size: 18px;
         border-radius: 10px;

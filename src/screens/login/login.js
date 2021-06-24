@@ -2,8 +2,7 @@ import React, { useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Input from "../../components/input/input";
 import Button from "../../components/button/button"
-import { cpfMask } from '../../utils/mask'
-import cpfIsValid from '../../utils/cpf'
+import emailIsValid from '../../utils/email'
 import {
   BannerPatient,
   BannerDoctor,
@@ -18,37 +17,37 @@ const Login = () => {
   let history = useHistory();
   const [userType, setUserType] = useState(true)
   const [data, setData] = useState({
-    cpf: '',
+    email: '',
     password: ''
   })
   const [errors, setErrors] = useState({
-    cpf: '',
+    email: '',
     password: ''
   })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (!data.cpf.trim()) {
-      errors.cpf = "Digite seu CPF!"
-    } else if (!cpfIsValid(data.cpf).isValid) {
-      errors.cpf = "CPF inválido!"
+    if (!data.email.trim()) {
+      errors.email = "Digite seu E-mail!"
+    } else if (!emailIsValid(data.email).isValid) {
+      errors.email = "E-mail inválido!"
     }
     if (!data.password.trim()) {
       errors.password = "Digite sua senha!"
     }
     const { name, value } = e.target
-    
+
     setErrors({
       ...errors,
       [name]: value
     })
     history.push('/home')
   }
-  const handleCPF = (e) => {
+  const handleEmail = (e) => {
     const { name, value } = e.target
     setData({
       ...data,
-      [name]: cpfMask(value)
+      [name]: value
     })
     setErrors({
       ...errors,
@@ -69,74 +68,52 @@ const Login = () => {
   }
 
   return (
-    <section className="container py-5">
-      <div className="row py-sm-5">
-        <div className="col-12 col-sm-6 d-flex justify-content-end align-items-center">
-          <div className="col-12 col-xl-6">
-            <h5 className="fs-20 fw-100 color-default mb-3">
-              Escolha uma opção
-            </h5>
-            <form onSubmit={handleSubmit}>
-              <div className="user-type mb-2">
+    <section className="container-fluid py-5 login">
+      <div className="container py-5">
+        <div className="row py-sm-5">
+          <div className="col-12 col-md-8 d-flex justify-content-start align-items-center py-5">
+            <div className="col-12 col-xl-8">
+              <div className="user-type">
                 <label>
                   <input type="radio" name="user-type" onClick={() => setUserType(true)} defaultChecked />
-                  <span className="user-type__button button-patient">Sou Paciente</span>
+                  <span className="user-type__button button-patient">Usuários</span>
                 </label>
                 <label>
                   <input type="radio" name="user-type" onClick={() => setUserType(false)} />
-                  <span className="user-type__button button-doctor">Sou Médico</span>
+                  <span className="user-type__button button-doctor">Médicos</span>
                 </label>
               </div>
-
-              <Input
-                name="cpf"
-                placeholder="Usuário (CPF)"
-                onChange={handleCPF}
-                value={data.cpf}
-                error={errors.cpf}
-                icon={<Profile className="input__icon" />}
-              />
-              <Input
-                name="password"
-                placeholder="Senha"
-                onChange={handleChange}
-                value={data.password}
-                error={errors.password}
-                icon={<Padlock className="input__icon" />}
-                type="password"
-              />
-              <div className="d-flex justify-content-between align-items-center px-2 pb-2">
-                <label className="d-flex align-items-center">
-                  <input type="checkbox" name="" />
-                  <p className="fs-16 fw-400 color-default px-1">Lembrar-me</p>
-                </label>
-                <Link to="/recuperar-senha" className="fs-16 fw-400 color-blue">Esqueci a senha</Link>
-              </div>
-              <Button type="submit" label="Entrar" color="blue" size="extra-large"/>
-              <Link className="button__register" to="/cadastro">
-                <Button label="Cadastre-se" color="light" size="extra-large"/>
-              </Link>
-            </form>
-          </div>
-        </div>
-        <div className="col-12 col-sm-6 d-flex justify-content-center justify-content-sm-start align-items-center order-first order-sm-0">
-          <div className="col-10 col-sm-12 col-xl-8 banner">
-            {
-              userType ?
-                <React.Fragment>
-                  <BannerPatient width="100%" />
-                  <div className="banner__border">
-                    <BorderBanner />
-                  </div>
-                </React.Fragment>
-                :
-                <React.Fragment>
-                  <BannerDoctor width="100%" />
-                  <div className="banner__border">
-                    <BorderBanner />
-                  </div>
-                </React.Fragment>
-            }
+              <form onSubmit={handleSubmit}>
+                <Input
+                  name="email"
+                  placeholder="Usuário (E-mail)"
+                  onChange={handleEmail}
+                  value={data.email}
+                  error={errors.email}
+                  icon={<Profile className="input__icon" />}
+                />
+                <Input
+                  name="password"
+                  placeholder="Senha"
+                  onChange={handleChange}
+                  value={data.password}
+                  error={errors.password}
+                  icon={<Padlock className="input__icon" />}
+                  type="password"
+                />
+                <div className="d-flex justify-content-between align-items-center px-2 pb-2">
+                  <label className="d-flex align-items-center">
+                    <input type="checkbox" name="" />
+                    <p className="fs-16 fw-400 color-default px-1">Lembrar-me</p>
+                  </label>
+                  <Link to="/recuperar-senha" className="fs-16 fw-600 color-blue font-nunito">Esqueci a senha</Link>
+                </div>
+                <Button type="submit" label="Entrar" color="blue" size="extra-large" />
+                <Link to="/cadastro">
+                  <p className="fs-18 fw-500 color-blue font-nunito text-center">Ainda não tem conta? <strong className="fw-600">Cadastre-se.</strong></p>
+                </Link>
+              </form>
+            </div>
           </div>
         </div>
       </div>

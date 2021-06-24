@@ -3,15 +3,17 @@ html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-body {
+* {
     &::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
+        height: 8px;
     }
     &::-webkit-scrollbar-thumb {
-        background: #888888;
+        background: #bbbbbb;
+        border-radius: 10px;
     }
     &::-webkit-scrollbar-track {
-        background: #c6c3c3;
+        background: #f2f2f2;
     }
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -114,6 +116,9 @@ video {
     font: inherit;
     vertical-align: baseline;
 }
+form {
+    box-sizing: border-box;
+}
 article,
 aside,
 details,
@@ -186,9 +191,13 @@ html {
     background: #fff;
     margin-top: 10px;
     padding: 1rem 1rem;
+    margin: 0.5rem;
 }
 .content {
     max-width: 750px;
+}
+.content-wrapper{
+    background: #f2f2f2;
 }
 .content-center {
     max-width: 750px;
@@ -196,8 +205,28 @@ html {
 }
 @media (min-width: 768px) {
     .section {
-        background: #fff;
-        margin-top: 10px;
         padding: 1rem 3rem;
+    }
+}
+.separator{
+    position: relative;
+    display: block;
+    z-index: 1;
+    p{
+        background: #FFF;
+        padding: 5px 10px;
+        width: fit-content;
+        margin: auto;
+        z-index: 1;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        left: 0.25rem;
+        top: 50%;
+        width: calc(100% - 0.5rem);
+        height: 1px;
+        background: #bbbbbb;
+        z-index: -1;
     }
 }
