@@ -1,30 +1,7 @@
 import React from "react";
-import { Appointment } from "./components";
-import { InputSelect, Card } from '../../components'
-import { Stethoscope, Doctor, CheckList, Syringe } from "../../shared/images";
+import { Card, Appointment } from "./components";
+import { Stethoscope, Doctor, CheckList } from "../../shared/images";
 import "./home.scss";
-const options = [
-    {
-        label: "Afonso Cláudio",
-        value: "Afonso Cláudio",
-    },
-    {
-        label: "Afonso Cláudio",
-        value: "Afonso Cláudio",
-    },
-    {
-        label: "Afonso Cláudio",
-        value: "Afonso Cláudio",
-    },
-    {
-        label: "Afonso Cláudio",
-        value: "Afonso Cláudio",
-    },
-    {
-        label: "Afonso Cláudio",
-        value: "Afonso Cláudio",
-    },
-]
 const Home = () => {
     return (
         <React.Fragment>
@@ -34,32 +11,22 @@ const Home = () => {
                     <div className="cards-content d-flex">
                         <Card
                             icon={<Stethoscope />}
-                            title={"Histórico de saúde"}
-                            color={"green"} />
+                            title={"Prontuários"}
+                            color={"gray"} />
                         <Card
                             icon={<Doctor />}
-                            title={"Consulta"}
-                            color={"blue-light"} />
+                            title={"Médicos"}
+                            color={"green"} />
                         <Card
                             icon={<CheckList />}
-                            title={"Minha Agenda"}
+                            title={"Consultas Agendadas"}
                             color={"red"}
                         />
                         <Card
-                            icon={<Syringe />}
-                            title={"Imunizações"}
+                            icon={<CheckList />}
+                            title={"Consultas Realizadas"}
                             color={"blue"}
                         />
-                    </div>
-                </div>
-            </div>
-            <div className="section p-0">
-                <div className="health-service">
-                    <h2 className="fs-30 fs-lg-40 fw-400 color-white font-nunito">Serviços de Saúde</h2>
-                    <p className="fs-18 fs-sm-20 fw-400 color-white font-nunito">Encontre outros serviços e profissionais<br/> prontos para te ajudar. </p>
-                    <div className="health-service__select mt-5">
-                        <InputSelect placeholder="Serviço, profissional, clínica" options={options} background="#FFF" />
-                        <InputSelect placeholder="Cidade" options={options} background="#FFF" />
                     </div>
                 </div>
             </div>

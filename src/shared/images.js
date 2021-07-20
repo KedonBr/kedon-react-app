@@ -34,11 +34,11 @@ import { ReactComponent as Download } from '../assets/img/download.svg'
 import { ReactComponent as GobackArrow } from '../assets/img/goback.svg'
 import { ReactComponent as Close } from '../assets/img/close.svg'
 import { ReactComponent as Search } from '../assets/img/search.svg'
-import { ReactComponent as Check } from '../assets/img/check.svg'
-import { ReactComponent as FacebookCircle } from '../assets/img/facebook-circle.svg'
-import { ReactComponent as GoogleCircle } from '../assets/img/google-circle.svg'
-import { ReactComponent as Syringe } from '../assets/img/syringe.svg'
-import { ReactComponent as Clips } from '../assets/img/clips.svg'
+//Images
+import { ReactComponent as BannerPatient } from '../assets/img/banner-patient.svg';
+import { ReactComponent as BannerDoctor } from '../assets/img/banner-doctor.svg';
+import { ReactComponent as BorderBanner } from '../assets/img/border-banner.svg';
+
 
 export {
     Logo,
@@ -77,9 +77,9 @@ export {
     GobackArrow,
     Close,
     Search,
-    Check,
-    FacebookCircle,
-    GoogleCircle,
-    Syringe,
-    Clips,
+
+    
+    BannerPatient,
+    BannerDoctor,
+    BorderBanner,
 }

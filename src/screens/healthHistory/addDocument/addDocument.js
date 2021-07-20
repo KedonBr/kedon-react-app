@@ -18,17 +18,15 @@ const options = [
 const AddDocument = () => {
     const [data, setData] = useState({
         CRM: "",
-        name_doctor: "",
         date: "",
-        comments: "",
+        file_name: "",
         type: "",
         uploads: [],
     });
     const [error, setError] = useState({
         CRM: "",
-        name_doctor: "",
         date: "",
-        comments: "",
+        file_name: "",
         type: "",
         uploads: "",
     });
@@ -95,14 +93,8 @@ const AddDocument = () => {
         if(!data.CRM.trim()){
             error.CRM = "Digite o CRM do seu médico!";
         }
-        if(!data.name_doctor.trim()){
-            error.name_doctor = "Digite o nome do seu médico!";
-        }
-        if(!data.date.trim()){
-            error.date = "Digite a data que o exame foi realizado!";
-        }
-        if(!data.comments.trim()){
-            error.comments = "Digite suas observações!";
+        if(!data.file_name.trim()){
+            error.file_name = "Digite o nome do arquivo!";
         }
         if(!data.type.trim()){
             error.type = "Selecione o tipo exame!";
@@ -119,7 +111,7 @@ const AddDocument = () => {
     };
     return (
         <div className="section">
-            <div className="content">
+            <div className="container">
                 <Link to="/historico-de-saude"
                     className="fs-20 fw-400 color-default d-flex align-items-center">
                     <GobackArrow height={25} width={25} className="mx-2" />
@@ -137,25 +129,17 @@ const AddDocument = () => {
                         error={error.CRM}
                     />
                     <Input
-                        name="name_doctor"
-                        placeholder="Nome do médico*"
-                        onChange={handleChange}
-                        value={data.name_doctor}
-                        error={error.name_doctor}
-                    />
-                    <Input
                         name="date"
                         placeholder="Realizado em:"
                         onChange={handleDate}
                         value={data.date}
-                        error={error.date}
                     />
                     <Input
-                        name="comments"
-                        placeholder="Observações*"
+                        name="file_name"
+                        placeholder="Nome do arquivo*"
                         onChange={handleChange}
-                        value={data.comments}
-                        error={error.comments}
+                        value={data.file_name}
+                        error={error.file_name}
                     />
                     <InputSelect
                         name="type"

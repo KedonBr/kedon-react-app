@@ -1,55 +1,12 @@
 @import "../../assets/scss/app.scss";
 
 .cards{
-    overflow-x: auto;
+    overflow-x: scroll;
     box-sizing: border-box;
     display: flex;
+    
     .cards-content{
         width: 750px;
-    }
-}
-
-.health-service{
-    padding: 5rem 1rem;
-    position: relative;
-    z-index: 1;
-    &::before{
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        background: rgba(35, 105, 112, 0.5);
-        z-index: -1;
-    }
-    &::after{
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        background-image: url(../../assets/img/chiropractor-massaging.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        z-index: -2;
-        @include to($breakpoint-sm){
-            background-position: right;
-        }
-    }
-    &__select{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        border: 2px solid #FFF;
-        border-radius: 15px;
-        padding: 0.5rem 0.5rem 0.25rem;
-        width: 100%;
-        max-width: 750px;
-        box-sizing: border-box;
-        @include to($breakpoint-sm){
-            grid-template-columns: 1fr;
-        }
+        
     }
 }

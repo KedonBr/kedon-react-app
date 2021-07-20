@@ -1,8 +1,4 @@
 @import "../../../assets/scss/app.scss";
-header{
-    background: #FFF;
-    box-sizing: border-box;
-}
 .header {
     .menu {
         position: relative;
@@ -35,12 +31,11 @@ header{
             opacity: 0;
             visibility: hidden;
             transition: 0.5s;
-            z-index: 9999;
             &--item {
                 width: 100%;
                 background: #fff;
                 margin-bottom: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             }
         }
         &__hamburguer {

@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 import "./inputSelect.scss";
-const InputSelect = ({ name, options, error, background, ...rest }) => {
+const InputSelect = ({ name, options, error, ...rest }) => {
 
     return (
         <div>
@@ -24,7 +24,7 @@ const InputSelect = ({ name, options, error, background, ...rest }) => {
                         marginBottom: '0.50rem',
                         marginLeft: '0.25rem',
                         marginRight: '0.25rem',
-                        backgroundColor: error ? 'rgb(253, 118, 118, 0.05)' : background ? background : 'transparent',
+                        backgroundColor: error ? 'rgb(253, 118, 118, 0.05)' : 'transparent',
                         cursor: 'pointer'
                     }),
                     singleValue: (styles) => ({ ...styles, fontSize: window.innerWidth < 576 ? 16 : 18, color: "#707070" }),
